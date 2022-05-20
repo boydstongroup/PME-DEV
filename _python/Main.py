@@ -27,11 +27,13 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
             lambda: Commands.motor_toggle(0, self))
         self.ex2Enable_pushButton.clicked.connect(
             lambda: Commands.motor_toggle(1, self))
-        #
-        # self.frameReverse_pushButton.clicked.connect(
-        #     lambda: Commands.reverse_motor(0, self))
-        # self.coreReverse_pushButton.clicked.connect(
-        #     lambda: Commands.reverse_motor(1, self))
+
+        self.ex1Reverse_pushButton.clicked.connect(
+            lambda: Commands.reverse_motor(0, self))
+        self.ex2Reverse_pushButton.clicked.connect(
+            lambda: Commands.reverse_motor(1, self))
+
+        self.link_pushButton.clicked.connect(lambda: UI_Update.link(self))
         #
         # self.snapshot_pushButton.clicked.connect(
         #     lambda: Call_Thread.start_snapshot(self))
@@ -73,7 +75,7 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
         # self.sample_doubleSpinBox.valueChanged.connect(
         #     lambda: Functions.sample_change(self))
         #
-        # self.link_pushButton.clicked.connect(lambda: UI_Update.link(self))
+
         #
         # self.Start_spinBox.valueChanged.connect(
         #     lambda: UI_Update.LED_validate(self))

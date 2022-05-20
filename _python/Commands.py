@@ -35,22 +35,22 @@ def motor_toggle(mot, self):
     Settings.sendCMD(CMD)
     UI_Update.motor_update(self)
 
-#
-# def reverse_motor(mot, self):
-#     if Settings.LINKED:
-#         Settings.frame_dir = not Settings.frame_dir
-#         Settings.core_dir = not Settings.core_dir
-#     else:
-#         if not mot:
-#             Settings.frame_dir = not Settings.frame_dir
-#
-#         else:
-#             Settings.core_dir = not Settings.core_dir
-#     CMD = ("1~1~" + str(int(Settings.frame_dir)) +
-#            "~" + str(int(Settings.core_dir)))
-#     Settings.sendCMD(CMD)
-#     UI_Update.dir(self)
-#
+
+def reverse_motor(mot, self):
+    if Settings.LINKED:
+        Settings.ex1_dir = not Settings.ex1_dir
+        Settings.ex2_dir = not Settings.ex2_dir
+    else:
+        if not mot:
+            Settings.ex1_dir = not Settings.ex1_dir
+
+        else:
+            Settings.ex2_dir = not Settings.ex2_dir
+    CMD = ("1~1~" + str(int(Settings.ex1_dir)) +
+           "~" + str(int(Settings.ex2_dir)))
+    Settings.sendCMD(CMD)
+    UI_Update.dir(self)
+
 #
 # def spin_change(mot, self):
 #     self.core_spinBox.blockSignals(True)

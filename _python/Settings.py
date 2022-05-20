@@ -9,16 +9,22 @@ i2c_cmd = 0x5E
 def init():
 
     global ex1_enabled
-    ex1_enabled = False
+    ex1_enabled = True
 
     global ex2_enabled
-    ex2_enabled = False
+    ex2_enabled = True
 
     global LINKED
     LINKED = True
 
     global i2cbusy
     i2cbusy = False
+
+    global ex1_dir
+    ex1_dir = False
+
+    global ex2_dir
+    ex2_dir = False
 
     global ex1_Interval
     ex1_Interval = 400
@@ -50,11 +56,7 @@ def init():
     global rotation
     rotation = 0
 
-    global frame_dir
-    frame_dir = False
 
-    global core_dir
-    core_dir = False
 
     global interval_running
     interval_running = False
