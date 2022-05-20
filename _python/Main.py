@@ -1,7 +1,7 @@
 import Settings
 import Commands
+import UI_Update
 # import Threads
-# import UI_Update
 # import Functions
 # import Call_Thread
 # import os
