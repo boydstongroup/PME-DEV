@@ -258,7 +258,7 @@
            <string>Enable or disable motor driver</string>
           </property>
           <property name="text">
-           <string>ENABLE MOTOR</string>
+           <string>ENABLE EXTRUDER</string>
           </property>
          </widget>
         </item>
@@ -268,7 +268,7 @@
            <string>Enable or disable motor driver</string>
           </property>
           <property name="text">
-           <string>ENABLE MOTOR</string>
+           <string>ENABLE EXTRUDER</string>
           </property>
          </widget>
         </item>
