@@ -1,0 +1,1 @@
+pyuic5 PME.ui > ../_python/PME_UI.py
