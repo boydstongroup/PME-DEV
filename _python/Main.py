@@ -1,5 +1,5 @@
-# import Settings
-# import Commands
+import Settings
+import Commands
 # import Threads
 # import UI_Update
 # import Functions
@@ -20,17 +20,13 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
         super(self.__class__, self).__init__()
         self.setupUi(self)
 
-        # Settings.init()
-        # Call_Thread.sensor_init(self)
-        # Commands.init()
+        Settings.init()
+        Commands.init()
 
-        # self.Sensor_tabWidget.currentChanged.connect(
-        #     lambda: Functions.printci(self))
-        #
-        # self.frameErgz_pushButton.clicked.connect(
-        #     lambda: Commands.motor_toggle(0, self))
-        # self.coreErgz_pushButton.clicked.connect(
-        #     lambda: Commands.motor_toggle(1, self))
+        self.ex1Enable_pushButton.clicked.connect(
+            lambda: Commands.motor_toggle(0, self))
+        self.ex2Enable_pushButton.clicked.connect(
+            lambda: Commands.motor_toggle(1, self))
         #
         # self.frameReverse_pushButton.clicked.connect(
         #     lambda: Commands.reverse_motor(0, self))
