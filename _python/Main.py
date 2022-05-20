@@ -14,7 +14,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 import PME_UI
 
 
-class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
+class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
 
     def __init__(self):
         super(self.__class__, self).__init__()
