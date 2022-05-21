@@ -81,22 +81,22 @@ def init():
 
     global forward
     forward = QtGui.QIcon()
-    forward.addPixmap(QtGui.QPixmap("../_image/Forward.png"),
+    forward.addPixmap(QtGui.QPixmap("../_images/Forward.png"),
                       QtGui.QIcon.Normal, QtGui.QIcon.Off)
 
     global reverse
     reverse = QtGui.QIcon()
-    reverse.addPixmap(QtGui.QPixmap("../_image/Reverse.png"),
+    reverse.addPixmap(QtGui.QPixmap("../_images/Reverse.png"),
                       QtGui.QIcon.Normal, QtGui.QIcon.Off)
 
     global linked
     linked = QtGui.QIcon()
-    linked.addPixmap(QtGui.QPixmap("../_image/Link.png"),
+    linked.addPixmap(QtGui.QPixmap("../_images/Link.png"),
                      QtGui.QIcon.Normal, QtGui.QIcon.Off)
 
     global broken
     broken = QtGui.QIcon()
-    broken.addPixmap(QtGui.QPixmap("../_image/Broken_Link.png"),
+    broken.addPixmap(QtGui.QPixmap("../_images/Broken_Link.png"),
                      QtGui.QIcon.Normal, QtGui.QIcon.Off)
 
 def sendCMD(cont):
