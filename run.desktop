@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=PME
+Comment=Start PME GUI
+Icon=/home/pi/Documents/PME-DEV/_images/logo.ico
+Exec=sh /home/pi/Documents/PME-DEV/PME.sh
+Type=Application
+Encoding=UTF-8
+Terminal=true
+Categories=None;

@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
         MainWindow.setEnabled(True)
         MainWindow.resize(1024, 575)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../_image/logo.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("../_images/logo.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setDocumentMode(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -386,7 +386,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "SciSpiner MAX"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "PME Gemini"))
         self.ex2_label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-weight:700;\">Extruder 2</span></p></body></html>"))
         self.ex2Reverse_pushButton.setToolTip(_translate("MainWindow", "Reverse rotation direction"))
         self.label_4.setText(_translate("MainWindow", "Microsteps:"))

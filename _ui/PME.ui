@@ -14,11 +14,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>SciSpiner MAX</string>
+   <string>PME Gemini</string>
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../_image/logo.ico</normaloff>../_image/logo.ico</iconset>
+    <normaloff>../_images/logo.ico</normaloff>../_images/logo.ico</iconset>
   </property>
   <property name="documentMode">
    <bool>false</bool>
