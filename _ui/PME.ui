@@ -49,7 +49,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../_images/Background.png</pixmap>
+     <pixmap>../_images/Background-01.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -150,7 +150,7 @@
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../_images/forward.png</normaloff>../_images/forward.png</iconset>
+            <normaloff>../_images/Forward.png</normaloff>../_images/Forward.png</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -162,10 +162,10 @@
         </item>
         <item row="4" column="4">
          <layout class="QGridLayout" name="gridLayout_4">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_3">
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_4">
             <property name="text">
-             <string>Interval:</string>
+             <string>Microsteps:</string>
             </property>
            </widget>
           </item>
@@ -188,14 +188,14 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_4">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_3">
             <property name="text">
-             <string>Microsteps:</string>
+             <string>Interval:</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
+          <item row="2" column="1">
            <widget class="QComboBox" name="ex2General_comboBox">
             <property name="currentIndex">
              <number>0</number>
@@ -250,6 +250,32 @@
             </item>
            </widget>
           </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_23">
+            <property name="text">
+             <string>Current Limit</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="ex2Current_spinBox">
+            <property name="suffix">
+             <string> mA</string>
+            </property>
+            <property name="minimum">
+             <number>100</number>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="singleStep">
+             <number>100</number>
+            </property>
+            <property name="value">
+             <number>400</number>
+            </property>
+           </widget>
+          </item>
          </layout>
         </item>
         <item row="5" column="0">
@@ -274,6 +300,13 @@
         </item>
         <item row="4" column="0">
          <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Interval:</string>
+            </property>
+           </widget>
+          </item>
           <item row="0" column="1">
            <widget class="QSpinBox" name="ex1General_spinBox">
             <property name="alignment">
@@ -293,21 +326,14 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label">
-            <property name="text">
-             <string>Interval:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
+          <item row="2" column="0">
            <widget class="QLabel" name="label_2">
             <property name="text">
              <string>Microsteps:</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
+          <item row="2" column="1">
            <widget class="QComboBox" name="ex1General_comboBox">
             <property name="currentIndex">
              <number>0</number>
@@ -357,6 +383,32 @@
               <string>256</string>
              </property>
             </item>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_22">
+            <property name="text">
+             <string>Current Limit</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="ex1Current_spinBox">
+            <property name="suffix">
+             <string> mA</string>
+            </property>
+            <property name="minimum">
+             <number>100</number>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="singleStep">
+             <number>100</number>
+            </property>
+            <property name="value">
+             <number>400</number>
+            </property>
            </widget>
           </item>
          </layout>
@@ -412,7 +464,7 @@
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../_images/forward.png</normaloff>../_images/forward.png</iconset>
+            <normaloff>../_images/Forward.png</normaloff>../_images/Forward.png</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -490,9 +542,9 @@
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>20</y>
+         <y>240</y>
          <width>551</width>
-         <height>441</height>
+         <height>221</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_5">
@@ -654,6 +706,25 @@
          </widget>
         </item>
        </layout>
+      </widget>
+      <widget class="QLabel" name="label_21">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>10</y>
+         <width>320</width>
+         <height>240</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../_images/Feedscrew_Receptacle.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
       </widget>
      </widget>
     </widget>

@@ -81,7 +81,7 @@ def init():
 
     global forward
     forward = QtGui.QIcon()
-    forward.addPixmap(QtGui.QPixmap("../_image/forward.png"),
+    forward.addPixmap(QtGui.QPixmap("../_image/Forward.png"),
                       QtGui.QIcon.Normal, QtGui.QIcon.Off)
 
     global reverse
