@@ -150,7 +150,7 @@
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../_images/Link.png</normaloff>../_images/Link.png</iconset>
+            <normaloff>../_images/Forward.png</normaloff>../_images/Forward.png</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -464,7 +464,7 @@
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../_images/Link.png</normaloff>../_images/Link.png</iconset>
+            <normaloff>../_images/Forward.png</normaloff>../_images/Forward.png</iconset>
           </property>
           <property name="iconSize">
            <size>
