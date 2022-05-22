@@ -55,6 +55,7 @@ def reverse_motor(mot, self):
 
 
 def slider_Released():
-    CMD = "1~2~" + str(Settings.ex1_Gmicrostep) + "~" + str(Settings.ex1_GInterval) + \
-        "~" + str(Settings.ex2_Gmicrostep) + "~" + str(Settings.ex2_GInterval)
+    CMD = "1~2~" + str(Settings.ex1_Gmicrostep) + "~" + str(Settings.ex1_currentLimit) + "~" + str(Settings.ex1_GInterval) + \
+        "~" + str(Settings.ex2_Gmicrostep) + "~" + \
+        str(Settings.ex2_currentLimit) + "~" + str(Settings.ex2_GInterval)
     Settings.sendCMD(CMD)

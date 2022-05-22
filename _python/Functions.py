@@ -15,11 +15,17 @@ def toggle_Signals(self, opt):
         self.ex2General_spinBox.blockSignals(True)
         self.ex1_verticalSlider.blockSignals(True)
         self.ex2_verticalSlider.blockSignals(True)
+        self.ex1Current_spinBox.blockSignals(True)
+        self.ex2Current_spinBox.blockSignals(True)
+
+        ex1Current_spinBox
     else:
         self.ex1General_spinBox.blockSignals(False)
         self.ex2General_spinBox.blockSignals(False)
         self.ex1_verticalSlider.blockSignals(False)
         self.ex2_verticalSlider.blockSignals(False)
+        self.ex1Current_spinBox.blockSignals(False)
+        self.ex2Current_spinBox.blockSignals(False)
 
 
 def spin_change(mot, self):
@@ -81,6 +87,33 @@ def slider_change(mot, self):
             self.ex2General_spinBox.setValue(Settings.ex2_GInterval)
 
     toggle_Signals(self, True)
+
+
+def current_change(mot, self):
+    toggle_Signals(self, False)
+
+    if Settings.LINKED:
+        if not mot:
+            Settings.ex1_currentLimit = self.ex1Current_spinBox.value()
+            Settings.ex2_currentLimit = Settings.ex1_currentLimit
+
+            self.ex2Current_spinBox.setValue(Settings.ex2_currentLimit)
+
+        else:
+            Settings.ex2_currentLimit = self.ex2Current_spinBox.value()
+            Settings.ex1_currentLimit = Settings.ex2_currentLimit
+
+            self.ex1Current_spinBox.setValue(Settings.ex1_currentLimit)
+
+    else:
+        if not mot:
+            Settings.ex1_currentLimit = self.ex1Current_spinBox.value()
+
+        else:
+            Settings.ex2_currentLimit = self.ex2Current_spinBox.value()
+
+    toggle_Signals(self, True)
+    Commands.slider_Released()
 
 
 # def rotate_image(self):

@@ -26,17 +26,23 @@ def init():
     global ex2_dir
     ex2_dir = False
 
-    global ex1_GInterval
-    ex1_GInterval = 400
-
-    global ex2_GInterval
-    ex2_GInterval = 400
-
     global ex1_Gmicrostep
     ex1_Gmicrostep = 256
 
     global ex2_Gmicrostep
     ex2_Gmicrostep = 256
+
+    global ex1_currentLimit
+    ex1_currentLimit = 400
+
+    global ex2_currentLimit
+    ex2_currentLimit = 400
+
+    global ex1_GInterval
+    ex1_GInterval = 400
+
+    global ex2_GInterval
+    ex2_GInterval = 400
 
     global tag_index
     tag_index = 0

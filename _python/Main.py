@@ -50,6 +50,11 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
         self.ex2_verticalSlider.sliderReleased.connect(
             lambda: Commands.slider_Released())
 
+        self.ex1Current_spinBox.valueChanged.connect(
+            lambda: Functions.current_change(0, self))
+        self.ex2Current_spinBox.valueChanged.connect(
+            lambda: Functions.current_change(1, self))
+
         #
         # self.snapshot_pushButton.clicked.connect(
         #     lambda: Call_Thread.start_snapshot(self))
@@ -78,10 +83,7 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
         #
 
         #
-        # self.Start_spinBox.valueChanged.connect(
-        #     lambda: UI_Update.LED_validate(self))
-        # self.End_spinBox.valueChanged.connect(
-        #     lambda: UI_Update.LED_validate(self))
+
         #
         # self.IR_pushButton.clicked.connect(lambda: Commands.IR_toggle(self))
         #
