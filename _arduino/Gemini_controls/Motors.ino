@@ -16,12 +16,9 @@ void setDir(bool mot) {
 }
 
 void setMotor() {
-  microstep_1 = commands[2];
+  Motor_1.microsteps(commands[2]);
   interval_1 = commands[3];
-  
-  microstep_2 = commands[4];
-  interval_2 = commands[5];
-  
-  ms_change = true;
 
+  Motor_2.microsteps(commands[4]);
+  interval_2 = commands[5];
 }
