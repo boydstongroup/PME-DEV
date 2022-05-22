@@ -35,9 +35,9 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
 
         self.link_pushButton.clicked.connect(lambda: UI_Update.link(self))
 
-        self.frame_spinBox.valueChanged.connect(
+        self.ex1General_spinBox.valueChanged.connect(
             lambda: Functions.spin_change(0, self))
-        self.core_spinBox.valueChanged.connect(
+        self.ex2General_spinBox.valueChanged.connect(
             lambda: Functions.spin_change(1, self))
 
         self.ex1_verticalSlider.valueChanged.connect(
