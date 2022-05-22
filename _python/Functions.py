@@ -1,10 +1,10 @@
 import Settings
 import Commands
 import UI_Update
-import timeit
-import Call_Thread
-import socket
-import os
+# import timeit
+# import Call_Thread
+# import socket
+# import os
 
 from PyQt5.QtWidgets import QFileDialog
 
