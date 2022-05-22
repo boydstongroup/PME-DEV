@@ -56,9 +56,9 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
             lambda: Functions.current_change(1, self))
 
         self.ex1General_comboBox.currentIndexChanged.connect(
-            lambda: Commands.Microstep_change(0, self))
+            lambda: Functions.Microstep_change(0, self))
         self.ex2General_comboBox.currentIndexChanged.connect(
-            lambda: Commands.Microstep_change(1, self))
+            lambda: Functions.Microstep_change(1, self))
 
         #
         # self.snapshot_pushButton.clicked.connect(
