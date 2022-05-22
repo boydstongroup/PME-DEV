@@ -16,15 +16,17 @@ void setDir(bool mot) {
 }
 
 void setMotor() {
-  microstep_1 = commands[2];
-  Serial.println(Motor_1.microsteps())
+  while (Motor_1.microsteps() != commands[2])
+    Motor_1.microsteps(commands[2]);
+
+  Serial.println(Motor_1.microsteps());
   Motor_1.rms_current(commands[3]);
   interval_1 = commands[4];
 
-  microstep_2 = commands[5];
+  while (Motor_2.microsteps() != commands[5])
+    Motor_2.microsteps(commands[5]);
+  Serial.println(Motor_2.microsteps());
   Motor_2.rms_current(commands[6]);
   interval_2 = commands[7];
-
-  ms_change = true;
 
 }
