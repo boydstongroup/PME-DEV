@@ -198,11 +198,13 @@
           <item row="2" column="1">
            <widget class="QComboBox" name="ex2General_comboBox">
             <property name="currentIndex">
-             <number>7</number>
+             <number>8</number>
             </property>
-            <property name="sizeAdjustPolicy">
-             <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
-            </property>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
             <item>
              <property name="text">
               <string>2</string>
@@ -261,7 +263,7 @@
              <number>100</number>
             </property>
             <property name="maximum">
-             <number>800</number>
+             <number>1000</number>
             </property>
             <property name="singleStep">
              <number>50</number>
@@ -331,8 +333,13 @@
           <item row="2" column="1">
            <widget class="QComboBox" name="ex1General_comboBox">
             <property name="currentIndex">
-             <number>7</number>
+             <number>8</number>
             </property>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
             <item>
              <property name="text">
               <string>2</string>
@@ -391,7 +398,7 @@
              <number>100</number>
             </property>
             <property name="maximum">
-             <number>800</number>
+             <number>1000</number>
             </property>
             <property name="singleStep">
              <number>50</number>
