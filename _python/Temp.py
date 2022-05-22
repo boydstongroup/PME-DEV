@@ -7,6 +7,7 @@ cpu = CPUTemperature()
 def write_temp(temp):
     with open("/home/pi/cpu_temp.csv", "a") as log:
         log.write(str(temp))
+        log.write("\n")
 
 
 while True:
