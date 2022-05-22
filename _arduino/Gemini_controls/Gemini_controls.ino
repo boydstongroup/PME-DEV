@@ -78,8 +78,8 @@ void setup() {
   //Motor_2.intpol(true);
   Motor_2.dedge(true);
 
-//    digitalWrite(EN_PIN_1, LOW);   // Disable driver in hardware
-//    digitalWrite(EN_PIN_2, LOW);   // Disable driver in hardware
+  //    digitalWrite(EN_PIN_1, LOW);   // Disable driver in hardware
+  //    digitalWrite(EN_PIN_2, LOW);   // Disable driver in hardware
 
   uint32_t data = 0;
   Motor_1.DRV_STATUS(&data);
@@ -93,6 +93,13 @@ void setup() {
 }
 
 void loop() {
+  if (ms_change)
+  {
+    Motor_1.microsteps(microstep_1);
+    delay(10);
+    Motor_2.microsteps(microstep_2);
+    ms_change = false;
+  }
 
   if (micros() < NextTime_1)
     NextTime_1 = micros();
