@@ -38,32 +38,6 @@ def motor_toggle(mot, self):
     UI_Update.motor_update(self)
 
 
-def Microstep_change(mot, self):
-    toggle_Signals(self, False)
-    if Settings.LINKED:
-        if not mot:
-            Settings.ex1_Gmicrostep = 2**self.ex1General_comboBox.currentIndex()
-            Settings.ex2_Gmicrostep = Settings.ex1_Gmicrostep
-
-            self.ex2General_comboBox.setCurrentIndex(
-                self.ex1General_comboBox.currentIndex())
-        else:
-            Settings.ex2_Gmicrostep = 2**self.ex2General_comboBox.currentIndex()
-            Settings.ex1_Gmicrostep = Settings.ex2_Gmicrostep
-
-            self.ex1General_comboBox.setCurrentIndex(
-                self.ex2General_comboBox.currentIndex())
-    else:
-        if not mot:
-            Settings.ex1_Gmicrostep = 2**self.ex1General_comboBox.currentIndex()
-        else:
-            Settings.ex2_Gmicrostep = 2**self.ex2General_comboBox.currentIndex()
-    toggle_Signals(self, True)
-    CMD = "1~3~" + str(Settings.ex1_Gmicrostep) + "~" + \
-        str(Settings.ex2_Gmicrostep)
-    Settings.sendCMD(CMD)
-
-
 def reverse_motor(mot, self):
     if Settings.LINKED:
         Settings.ex1_dir = not Settings.ex1_dir

@@ -115,6 +115,29 @@ def current_change(mot, self):
     Commands.current_Released()
 
 
+def Microstep_change(mot, self):
+    toggle_Signals(self, False)
+    if Settings.LINKED:
+        if not mot:
+            Settings.ex1_Gmicrostep = 2**self.ex1General_comboBox.currentIndex()
+            Settings.ex2_Gmicrostep = Settings.ex1_Gmicrostep
+
+            self.ex2General_comboBox.setCurrentIndex(
+                self.ex1General_comboBox.currentIndex())
+        else:
+            Settings.ex2_Gmicrostep = 2**self.ex2General_comboBox.currentIndex()
+            Settings.ex1_Gmicrostep = Settings.ex2_Gmicrostep
+
+            self.ex1General_comboBox.setCurrentIndex(
+                self.ex2General_comboBox.currentIndex())
+    else:
+        if not mot:
+            Settings.ex1_Gmicrostep = 2**self.ex1General_comboBox.currentIndex()
+        else:
+            Settings.ex2_Gmicrostep = 2**self.ex2General_comboBox.currentIndex()
+    toggle_Signals(self, True)
+    Commands.microstep_Released()
+
 # def rotate_image(self):
 #     Settings.rotation += 1
 #     Call_Thread.start_snapshot(self)
