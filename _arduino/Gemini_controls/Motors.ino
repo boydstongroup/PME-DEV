@@ -17,6 +17,7 @@ void setDir(bool mot) {
 
 void setMotor() {
   microstep_1 = commands[2];
+  Serial.println(Motor_1.microsteps())
   Motor_1.rms_current(commands[3]);
   interval_1 = commands[4];
 

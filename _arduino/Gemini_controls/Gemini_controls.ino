@@ -93,13 +93,13 @@ void setup() {
 }
 
 void loop() {
-  if (ms_change)
-  {
-    Motor_1.microsteps(microstep_1);
-    delay(50);
-    Motor_2.microsteps(microstep_2);
-    ms_change = false;
-  }
+//  if (ms_change)
+//  {
+//    Motor_1.microsteps(microstep_1);
+//    delay(50);
+//    Motor_2.microsteps(microstep_2);
+//    ms_change = false;
+//  }
 
   if (micros() < NextTime_1)
     NextTime_1 = micros();
