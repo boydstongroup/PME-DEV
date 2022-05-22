@@ -22,13 +22,13 @@ char data[50];
 int commands[COMMANDSIZE];
 
 //int MotorSpeed_1 = 10;
-int interval_1 = 200;
+int interval_1 = 400;
 int currentLimit_1 = 400;
 int microstep_1 = 256;
 boolean dir_1 = true;
 
 //int MotorSpeed_2 = 10;
-int interval_2 = 200;
+int interval_2 = 400;
 int currentLimit_2 = 400;
 int microstep_2 = 256;
 boolean dir_2 = true;
