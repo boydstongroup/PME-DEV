@@ -18,7 +18,6 @@ def toggle_Signals(self, opt):
         self.ex1Current_spinBox.blockSignals(True)
         self.ex2Current_spinBox.blockSignals(True)
 
-        ex1Current_spinBox
     else:
         self.ex1General_spinBox.blockSignals(False)
         self.ex2General_spinBox.blockSignals(False)
