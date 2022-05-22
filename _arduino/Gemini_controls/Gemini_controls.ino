@@ -2,21 +2,22 @@
 #include <Wire.h>
 #include <avr/wdt.h>
 
-#define DIR_PIN_1   10
-#define STEP_PIN_1  11
-#define EN_PIN_1    12
+#define DIR_PIN_1   3
+#define STEP_PIN_1  4
+#define EN_PIN_1    5
 
-#define DIR_PIN_2   3
-#define STEP_PIN_2  4
-#define EN_PIN_2    5
+#define DIR_PIN_2   10
+#define STEP_PIN_2  11
+#define EN_PIN_2    12
 
 #define BUZZER_PIN A8
+#define FAN_PIN 8
 
 #define SLAVE_ADDRESS 0x08
 #define COMMANDSIZE 10
 
-TMC2208Stepper Motor_1 = TMC2208Stepper(&Serial1);
-TMC2208Stepper Motor_2 = TMC2208Stepper(&Serial2);
+TMC2208Stepper Motor_1 = TMC2208Stepper(&Serial2);
+TMC2208Stepper Motor_2 = TMC2208Stepper(&Serial1);
 
 char data[50];
 int commands[COMMANDSIZE];
@@ -48,6 +49,7 @@ void setup() {
   Motor_2.push();
 
   pinMode(BUZZER_PIN, OUTPUT);
+  pinMode(FAN_PIN, OUTPUT);
 
   pinMode(DIR_PIN_1, OUTPUT);
   pinMode(STEP_PIN_1, OUTPUT);
@@ -90,6 +92,8 @@ void setup() {
   Wire.onReceive(receiveData);
 
   startup();
+  //  analogWrite(FAN_PIN, 30);
+  digitalWrite(FAN_PIN, HIGH);
 }
 
 void loop() {
