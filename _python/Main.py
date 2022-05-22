@@ -1,8 +1,8 @@
 import Settings
 import Commands
 import UI_Update
+import Functions
 # import Threads
-# import Functions
 # import Call_Thread
 # import os
 # import time
