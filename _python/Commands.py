@@ -55,18 +55,18 @@ def reverse_motor(mot, self):
 
 
 def interval_Released():
-    CMD = "1~2~" + "~" + str(Settings.ex1_GInterval) + \
+    CMD = "1~2~" + str(Settings.ex1_GInterval) + \
         "~" + str(Settings.ex2_GInterval)
     Settings.sendCMD(CMD)
 
 
 def microstep_Released():
-    CMD = "1~3~" + "~" + str(Settings.ex1_Gmicrostep) + \
+    CMD = "1~3~" + str(Settings.ex1_Gmicrostep) + \
         "~" + str(Settings.ex2_Gmicrostep)
     Settings.sendCMD(CMD)
 
 
 def current_Released():
-    CMD = "1~4~" + "~" + str(Settings.ex1_currentLimit) + \
+    CMD = "1~4~" + str(Settings.ex1_currentLimit) + \
         "~" + str(Settings.ex2_currentLimit)
     Settings.sendCMD(CMD)
