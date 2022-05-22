@@ -99,29 +99,35 @@ def settings_change(mot, self):
         if not mot:
             Settings.ex1_currentLimit = self.ex1Current_spinBox.value()
             Settings.ex2_currentLimit = Settings.ex1_currentLimit
-            Settings.ex1_Gmicrostep = 2**self.ex1General_comboBox.currentIndex()
+            Settings.ex1_Gmicrostep = 2**(
+                self.ex1General_comboBox.currentIndex() + 1)
             Settings.ex2_Gmicrostep = Settings.ex1_Gmicrostep
 
             self.ex2General_comboBox.setCurrentIndex(
                 self.ex1General_comboBox.currentIndex())
+            self.ex2Current_spinBox.setValue(Settings.ex2_currentLimit)
 
         else:
             Settings.ex2_currentLimit = self.ex2Current_spinBox.value()
             Settings.ex1_currentLimit = Settings.ex2_currentLimit
-            Settings.ex2_Gmicrostep = 2**self.ex2General_comboBox.currentIndex()
+            Settings.ex2_Gmicrostep = 2**(
+                self.ex2General_comboBox.currentIndex() + 1)
             Settings.ex1_Gmicrostep = Settings.ex2_Gmicrostep
 
             self.ex1General_comboBox.setCurrentIndex(
                 self.ex2General_comboBox.currentIndex())
+            self.ex1Current_spinBox.setValue(Settings.ex1_currentLimit)
 
     else:
         if not mot:
             Settings.ex1_currentLimit = self.ex1Current_spinBox.value()
-            Settings.ex1_Gmicrostep = 2**self.ex1General_comboBox.currentIndex()
+            Settings.ex1_Gmicrostep = 2**(
+                self.ex1General_comboBox.currentIndex() + 1)
 
         else:
             Settings.ex2_currentLimit = self.ex2Current_spinBox.value()
-            Settings.ex2_Gmicrostep = 2**self.ex2General_comboBox.currentIndex()
+            Settings.ex2_Gmicrostep = 2**(
+                self.ex2General_comboBox.currentIndex() + 1)
 
     toggle_Signals(self, True)
     Commands.slider_Released()
