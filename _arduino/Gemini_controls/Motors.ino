@@ -15,23 +15,16 @@ void setDir(bool mot) {
     digitalWrite(DIR_PIN_1, commands[2]);
 }
 
-void setInterval() {
+void setMotor() {
+  Motor_1.microsteps(commands[2]);
+  delay(10);
+  Motor_1.rms_current(commands[3]);
+  interval_1 = commands[4];
+  
 
-  interval_1 = commands[2];
-  interval_2 = commands[3];
-
-}
-
-void setMicrosteps() {
-
-Motor_1.microsteps(commands[2]);
-Motor_2.microsteps(commands[3]);
-
-
-}
-
-void setCurrentLimit() {
-Motor_1.rms_current(commands[2]);
-Motor_2.rms_current(commands[3]);
-
+  Motor_2.microsteps(commands[5]);
+  delay(10);
+  Motor_2.rms_current(commands[6]);
+  interval_2 = commands[7];
+  
 }

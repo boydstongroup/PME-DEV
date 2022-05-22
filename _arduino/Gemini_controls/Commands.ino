@@ -15,13 +15,7 @@ void exeCMD() {
           dirUpdate();
           break;
         case 2:
-          setInterval();
-          break;
-        case 3:
-          setMicrosteps();
-          break;
-        case 4:
-          setCurrentLimit();
+          setMotor();
           break;
 
         default:
