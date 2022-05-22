@@ -17,13 +17,11 @@ void setDir(bool mot) {
 
 void setMotor() {
   Motor_1.microsteps(commands[2]);
-  delay(10);
   Motor_1.rms_current(commands[3]);
   interval_1 = commands[4];
   
 
   Motor_2.microsteps(commands[5]);
-  delay(10);
   Motor_2.rms_current(commands[6]);
   interval_2 = commands[7];
   
