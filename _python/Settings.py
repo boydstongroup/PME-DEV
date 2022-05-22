@@ -26,17 +26,17 @@ def init():
     global ex2_dir
     ex2_dir = False
 
-    global ex1_Interval
-    ex1_Interval = 400
+    global ex1_GInterval
+    ex1_GInterval = 400
 
-    global ex2_Interval
-    ex2_Interval = 400
+    global ex2_GInterval
+    ex2_GInterval = 400
 
-    global ex1_microstep
-    ex1_microstep = 256
+    global ex1_Gmicrostep
+    ex1_Gmicrostep = 256
 
-    global ex2_microstep
-    ex2_microstep = 256
+    global ex2_Gmicrostep
+    ex2_Gmicrostep = 256
 
     global tag_index
     tag_index = 0
@@ -55,8 +55,6 @@ def init():
 
     global rotation
     rotation = 0
-
-
 
     global interval_running
     interval_running = False
@@ -98,6 +96,7 @@ def init():
     broken = QtGui.QIcon()
     broken.addPixmap(QtGui.QPixmap("../_images/Broken_Link.png"),
                      QtGui.QIcon.Normal, QtGui.QIcon.Off)
+
 
 def sendCMD(cont):
     print("sending command...\n" + cont)
