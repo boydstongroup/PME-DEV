@@ -380,8 +380,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.tabWidget.setCurrentIndex(0)
-        self.ex2General_comboBox.setCurrentIndex(0)
-        self.ex1General_comboBox.setCurrentIndex(0)
+        self.ex2General_comboBox.setCurrentIndex(8)
+        self.ex1General_comboBox.setCurrentIndex(8)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):

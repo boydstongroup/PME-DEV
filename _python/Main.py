@@ -51,9 +51,14 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
             lambda: Commands.slider_Released())
 
         self.ex1Current_spinBox.valueChanged.connect(
-            lambda: Functions.current_change(0, self))
+            lambda: Functions.settings_change(0, self))
         self.ex2Current_spinBox.valueChanged.connect(
-            lambda: Functions.current_change(1, self))
+            lambda: Functions.settings_change(1, self))
+
+        self.ex1General_comboBox.currentIndexChanged.connect(
+            lambda: Functions.settings_change(0, self))
+        self.ex2General_comboBox.currentIndexChanged.connect(
+            lambda: Functions.settings_change(1, self))
 
         #
         # self.snapshot_pushButton.clicked.connect(
