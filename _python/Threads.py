@@ -94,7 +94,7 @@ class Agitation(QThread):
                 ex2_last_time = current_time
                 ex2_agitating = True
                 Settings.agitating = True
-            if ex2_eclipsed_time >= Settings.ex2_AgitationDuration and ex1_agitating:
+            if ex2_eclipsed_time >= Settings.ex2_AgitationDuration and ex2_agitating:
                 Settings.agitating = False
                 Commands.Power_Update()
                 if Settings.gradient_running:

@@ -87,7 +87,7 @@ def Agitation_start(self, mot):
         self.ex2Agitate_pushButton.setEnabled(False)
     if mot == 2:
         Settings.ex1_AgitationInterval = self.ex1AgitateInterval_spinBox.value()
-        Settings.ex1_AgitationInterval = self.ex2AgitateInterval_spinBox.value()
+        Settings.ex2_AgitationInterval = self.ex2AgitateInterval_spinBox.value()
         Settings.ex1_AgitationDuration = self.ex1AgitateDuration_spinBox.value()
         Settings.ex2_AgitationDuration = self.ex2AgitateDuration_spinBox.value()
         self.startAgitation_pushButton.setText("END PROGRAMMED AGITATION")
