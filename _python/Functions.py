@@ -36,31 +36,31 @@ def spin_change(mot, self):
 
     if Settings.LINKED:
         if not mot:
-            Settings.ex1_GInterval = self.ex1General_spinBox.value()
-            Settings.ex2_GInterval = Settings.ex1_GInterval
+            Settings.ex1_GeneralInterval = self.ex1General_spinBox.value()
+            Settings.ex2_GeneralInterval = Settings.ex1_GeneralInterval
 
-            self.ex1_verticalSlider.setValue(Settings.ex1_GInterval)
-            self.ex2_verticalSlider.setValue(Settings.ex2_GInterval)
+            self.ex1_verticalSlider.setValue(Settings.ex1_GeneralInterval)
+            self.ex2_verticalSlider.setValue(Settings.ex2_GeneralInterval)
 
-            self.ex2General_spinBox.setValue(Settings.ex2_GInterval)
+            self.ex2General_spinBox.setValue(Settings.ex2_GeneralInterval)
 
         else:
-            Settings.ex2_GInterval = self.ex2General_spinBox.value()
-            Settings.ex1_GInterval = Settings.ex2_GInterval
+            Settings.ex2_GeneralInterval = self.ex2General_spinBox.value()
+            Settings.ex1_GeneralInterval = Settings.ex2_GeneralInterval
 
-            self.ex1_verticalSlider.setValue(Settings.ex1_GInterval)
-            self.ex2_verticalSlider.setValue(Settings.ex2_GInterval)
+            self.ex1_verticalSlider.setValue(Settings.ex1_GeneralInterval)
+            self.ex2_verticalSlider.setValue(Settings.ex2_GeneralInterval)
 
-            self.ex1General_spinBox.setValue(Settings.ex1_GInterval)
+            self.ex1General_spinBox.setValue(Settings.ex1_GeneralInterval)
 
     else:
         if not mot:
-            Settings.ex1_GInterval = self.ex1General_spinBox.value()
-            self.ex1_verticalSlider.setValue(Settings.ex1_GInterval)
+            Settings.ex1_GeneralInterval = self.ex1General_spinBox.value()
+            self.ex1_verticalSlider.setValue(Settings.ex1_GeneralInterval)
 
         else:
-            Settings.ex2_GInterval = self.ex2General_spinBox.value()
-            self.ex2_verticalSlider.setValue(Settings.ex2_GInterval)
+            Settings.ex2_GeneralInterval = self.ex2General_spinBox.value()
+            self.ex2_verticalSlider.setValue(Settings.ex2_GeneralInterval)
 
     toggle_Signals(self, True)
     Commands.slider_Released()
@@ -71,23 +71,23 @@ def slider_change(mot, self):
 
     if Settings.LINKED:
         if not mot:
-            Settings.ex1_GInterval = self.ex1_verticalSlider.sliderPosition()
-            Settings.ex2_GInterval = Settings.ex1_GInterval
-            self.ex2_verticalSlider.setValue(Settings.ex2_GInterval)
+            Settings.ex1_GeneralInterval = self.ex1_verticalSlider.sliderPosition()
+            Settings.ex2_GeneralInterval = Settings.ex1_GeneralInterval
+            self.ex2_verticalSlider.setValue(Settings.ex2_GeneralInterval)
 
         else:
-            Settings.ex2_GInterval = self.ex2_verticalSlider.sliderPosition()
-            Settings.ex1_GInterval = Settings.ex2_GInterval
-            self.ex1_verticalSlider.setValue(Settings.ex1_GInterval)
-        self.ex1General_spinBox.setValue(Settings.ex1_GInterval)
-        self.ex2General_spinBox.setValue(Settings.ex2_GInterval)
+            Settings.ex2_GeneralInterval = self.ex2_verticalSlider.sliderPosition()
+            Settings.ex1_GeneralInterval = Settings.ex2_GeneralInterval
+            self.ex1_verticalSlider.setValue(Settings.ex1_GeneralInterval)
+        self.ex1General_spinBox.setValue(Settings.ex1_GeneralInterval)
+        self.ex2General_spinBox.setValue(Settings.ex2_GeneralInterval)
     else:
         if not mot:
-            Settings.ex1_GInterval = self.ex1_verticalSlider.sliderPosition()
-            self.ex1General_spinBox.setValue(Settings.ex1_GInterval)
+            Settings.ex1_GeneralInterval = self.ex1_verticalSlider.sliderPosition()
+            self.ex1General_spinBox.setValue(Settings.ex1_GeneralInterval)
         else:
-            Settings.ex2_GInterval = self.ex2_verticalSlider.sliderPosition()
-            self.ex2General_spinBox.setValue(Settings.ex2_GInterval)
+            Settings.ex2_GeneralInterval = self.ex2_verticalSlider.sliderPosition()
+            self.ex2General_spinBox.setValue(Settings.ex2_GeneralInterval)
 
     toggle_Signals(self, True)
 
@@ -99,9 +99,9 @@ def settings_change(mot, self):
         if not mot:
             Settings.ex1_currentLimit = self.ex1Current_spinBox.value()
             Settings.ex2_currentLimit = Settings.ex1_currentLimit
-            Settings.ex1_Gmicrostep = 2**(
+            Settings.ex1_GeneralMicrostep = 2**(
                 self.ex1General_comboBox.currentIndex() + 1)
-            Settings.ex2_Gmicrostep = Settings.ex1_Gmicrostep
+            Settings.ex2_GeneralMicrostep = Settings.ex1_GeneralMicrostep
 
             self.ex2General_comboBox.setCurrentIndex(
                 self.ex1General_comboBox.currentIndex())
@@ -110,9 +110,9 @@ def settings_change(mot, self):
         else:
             Settings.ex2_currentLimit = self.ex2Current_spinBox.value()
             Settings.ex1_currentLimit = Settings.ex2_currentLimit
-            Settings.ex2_Gmicrostep = 2**(
+            Settings.ex2_GeneralMicrostep = 2**(
                 self.ex2General_comboBox.currentIndex() + 1)
-            Settings.ex1_Gmicrostep = Settings.ex2_Gmicrostep
+            Settings.ex1_GeneralMicrostep = Settings.ex2_GeneralMicrostep
 
             self.ex1General_comboBox.setCurrentIndex(
                 self.ex2General_comboBox.currentIndex())
@@ -121,12 +121,12 @@ def settings_change(mot, self):
     else:
         if not mot:
             Settings.ex1_currentLimit = self.ex1Current_spinBox.value()
-            Settings.ex1_Gmicrostep = 2**(
+            Settings.ex1_GeneralMicrostep = 2**(
                 self.ex1General_comboBox.currentIndex() + 1)
 
         else:
             Settings.ex2_currentLimit = self.ex2Current_spinBox.value()
-            Settings.ex2_Gmicrostep = 2**(
+            Settings.ex2_GeneralMicrostep = 2**(
                 self.ex2General_comboBox.currentIndex() + 1)
 
     toggle_Signals(self, True)

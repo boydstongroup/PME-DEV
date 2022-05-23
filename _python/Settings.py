@@ -26,11 +26,11 @@ def init():
     global ex2_dir
     ex2_dir = False
 
-    global ex1_Gmicrostep
-    ex1_Gmicrostep = 256
+    global ex1_GeneralMicrostep
+    ex1_GeneralMicrostep = 256
 
-    global ex2_Gmicrostep
-    ex2_Gmicrostep = 256
+    global ex2_GeneralMicrostep
+    ex2_GeneralMicrostep = 256
 
     global ex1_currentLimit
     ex1_currentLimit = 400
@@ -38,29 +38,36 @@ def init():
     global ex2_currentLimit
     ex2_currentLimit = 400
 
-    global ex1_GInterval
-    ex1_GInterval = 400
+    global ex1_GeneralInterval
+    ex1_GeneralInterval = 400
 
-    global ex2_GInterval
-    ex2_GInterval = 400
+    global ex2_GeneralInterval
+    ex2_GeneralInterval = 400
 
-    global tag_index
-    tag_index = 0
+    global ex1_GradientInterval
+    ex1_GradientInterval = 60000
+    global ex2_GradientInterval
+    ex2_GradientInterval = 60000
 
-    global interval
-    interval = 2
+    global ex1_FinalInterval
+    ex1_FinalInterval = 20
+    global ex2_FinalInterval
+    ex2_FinalInterval = 20
 
-    global duration
-    duration = 2
+    global ex1_CurrentInterval
+    ex1_CurrentInterval = 200
+    global ex2_CurrentInterval
+    ex2_CurrentInterval = 400
 
-    global total
-    total = 1
+    global ex1_GradientDelta
+    ex1_GradientDelta = 10
+    global ex2_GradientDelta
+    ex2_GradientDelta = 10
 
-    global current
-    current = 0
-
-    global rotation
-    rotation = 0
+    global ex1_Increasing
+    ex1_Increasing = True
+    global ex2_Increasing
+    ex2_GradientDelta = False
 
     global interval_running
     interval_running = False

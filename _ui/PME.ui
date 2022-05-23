@@ -68,7 +68,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Frame_tab">
      <attribute name="title">
@@ -543,7 +543,16 @@
           <item row="3" column="1">
            <widget class="QSpinBox" name="ex1Duration_spinBox">
             <property name="suffix">
-             <string> s</string>
+             <string> min</string>
+            </property>
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>10000</number>
+            </property>
+            <property name="singleStep">
+             <number>1</number>
             </property>
            </widget>
           </item>
@@ -552,12 +561,30 @@
             <property name="suffix">
              <string> ms</string>
             </property>
+            <property name="minimum">
+             <number>10</number>
+            </property>
+            <property name="maximum">
+             <number>4000</number>
+            </property>
+            <property name="value">
+             <number>200</number>
+            </property>
            </widget>
           </item>
           <item row="2" column="1">
            <widget class="QSpinBox" name="ex1Final_spinBox">
             <property name="suffix">
              <string> ms</string>
+            </property>
+            <property name="minimum">
+             <number>10</number>
+            </property>
+            <property name="maximum">
+             <number>4000</number>
+            </property>
+            <property name="value">
+             <number>400</number>
             </property>
            </widget>
           </item>
@@ -568,6 +595,12 @@
             </property>
             <property name="segmentStyle">
              <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="value" stdset="0">
+             <double>200.000000000000000</double>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>200</number>
             </property>
            </widget>
           </item>
@@ -629,6 +662,15 @@
             <property name="suffix">
              <string> ms</string>
             </property>
+            <property name="minimum">
+             <number>10</number>
+            </property>
+            <property name="maximum">
+             <number>4000</number>
+            </property>
+            <property name="value">
+             <number>400</number>
+            </property>
            </widget>
           </item>
           <item row="2" column="1">
@@ -636,12 +678,27 @@
             <property name="suffix">
              <string> ms</string>
             </property>
+            <property name="minimum">
+             <number>10</number>
+            </property>
+            <property name="maximum">
+             <number>4000</number>
+            </property>
+            <property name="value">
+             <number>200</number>
+            </property>
            </widget>
           </item>
           <item row="3" column="1">
            <widget class="QSpinBox" name="ex2Duration_spinBox">
             <property name="suffix">
-             <string> s</string>
+             <string> min</string>
+            </property>
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>10000</number>
             </property>
            </widget>
           </item>
@@ -656,6 +713,12 @@
            <widget class="QLCDNumber" name="ex2_lcdNumber">
             <property name="enabled">
              <bool>true</bool>
+            </property>
+            <property name="value" stdset="0">
+             <double>400.000000000000000</double>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>400</number>
             </property>
            </widget>
           </item>

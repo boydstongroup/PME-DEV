@@ -55,7 +55,16 @@ def reverse_motor(mot, self):
 
 
 def slider_Released():
-    CMD = "1~2~" + str(Settings.ex1_Gmicrostep) + "~" + str(Settings.ex1_currentLimit) + "~" + str(Settings.ex1_GInterval) + \
-        "~" + str(Settings.ex2_Gmicrostep) + "~" + \
-        str(Settings.ex2_currentLimit) + "~" + str(Settings.ex2_GInterval)
+    CMD = "1~2~" + str(Settings.ex1_GeneralMicrostep) + "~" + str(Settings.ex1_currentLimit) + "~" + str(Settings.ex1_GeneralInterval) + \
+        "~" + str(Settings.ex2_GeneralMicrostep) + "~" + \
+        str(Settings.ex2_currentLimit) + "~" + \
+        str(Settings.ex2_GeneralInterval)
+    Settings.sendCMD(CMD)
+
+
+def Gradient_Update():
+    CMD = "1~2~" + str(Settings.ex1_GeneralMicrostep) + "~" + str(Settings.ex1_currentLimit) + "~" + str(Settings.ex1_CurrentInterval) + \
+        "~" + str(Settings.ex2_GeneralMicrostep) + "~" + \
+        str(Settings.ex2_currentLimit) + "~" + \
+        str(Settings.ex2_CurrentInterval)
     Settings.sendCMD(CMD)

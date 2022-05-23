@@ -60,9 +60,8 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
         self.ex2General_comboBox.currentIndexChanged.connect(
             lambda: Functions.settings_change(1, self))
 
-        #
-        # self.snapshot_pushButton.clicked.connect(
-        #     lambda: Call_Thread.start_snapshot(self))
+        self.startGradient_pushButton.clicked.connect(
+            lambda: Call_Thread.start_Gradient(self))
         # self.startImaging_pushButton.clicked.connect(
         #     lambda: Call_Thread.start_timelapse(self))
         # self.preview_pushButton.clicked.connect(
@@ -82,13 +81,6 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
         #     lambda: Functions.Cycle_Change(self))
         # self.offCycle_spinBox.valueChanged.connect(
         #     lambda: Functions.Cycle_Change(self))
-        #
-
-        #
-        #
-
-        #
-
         #
         # self.IR_pushButton.clicked.connect(lambda: Commands.IR_toggle(self))
         #
