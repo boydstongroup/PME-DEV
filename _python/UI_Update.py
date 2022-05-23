@@ -56,6 +56,8 @@ def gradient_start(self):
 
     Settings.ex1_GradientInterval = (
         self.ex1Duration_spinBox.value() * 60000) / (abs(self.ex1Final_spinBox.value() - self.ex1Initial_spinBox.value()))
+    print(self.ex1Duration_spinBox.value() * 60000)
+    print(abs(self.ex1Final_spinBox.value() - self.ex1Initial_spinBox.value()))
     Settings.ex2_GradientInterval = (
         self.ex2Duration_spinBox.value() * 60000) / (abs(self.ex2Final_spinBox.value() - self.ex2Initial_spinBox.value()))
     gradient_update(self)
