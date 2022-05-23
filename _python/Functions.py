@@ -90,7 +90,6 @@ def slider_change(mot, self):
             self.ex2General_spinBox.setValue(Settings.ex2_GeneralInterval)
 
     toggle_Signals(self, True)
-    Commands.slider_Released()
 
 
 def settings_change(mot, self):
