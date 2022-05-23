@@ -62,9 +62,9 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
 
         self.ex1Initial_spinBox.valueChanged.connect(
             lambda: UI_Update.gradient_validate(self))
-        self.ex2Final_spinBox.valueChanged.connect(
+        self.ex1Final_spinBox.valueChanged.connect(
             lambda: UI_Update.gradient_validate(self))
-        self.ex1Initial_spinBox.valueChanged.connect(
+        self.ex2Initial_spinBox.valueChanged.connect(
             lambda: UI_Update.gradient_validate(self))
         self.ex2Final_spinBox.valueChanged.connect(
             lambda: UI_Update.gradient_validate(self))
