@@ -23,6 +23,20 @@ def start_Gradient(self):
         Settings.gradient_running = False
 
 
+def start_agitation(self):
+    if not Settings.agitation_running:
+        self.agitation_Thread = Threads.Agitation()
+        self.agitation_Thread.started.connect(
+            lambda: UI_Update.Agitation_start(self, 2))
+        self.agitation_Thread.finished.connect(
+            lambda: UI_Update.Agitation_complete(self, 2))
+
+        self.agitation_Thread.start()
+
+    else:
+        Settings.agitation_running = False
+
+
 def start_ex1Agitation(self):
     self.ex1Agitation_Thread = Threads.ex1Agitation()
     self.ex1Agitation_Thread.started.connect(

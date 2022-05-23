@@ -56,6 +56,55 @@ class Gradient(QThread):
         Settings.gradient_running = False
 
 
+class Agitation(QThread):
+
+    def __init__(self):
+        QThread.__init__(self)
+
+    def __del__(self):
+        self._running = False
+
+    def run(self):
+        Settings.agitation_running = True
+        ex1_last_time = round(time.time())
+        ex2_last_time = ex1_last_time
+        while Settings.agitation_running:
+            current_time = round(time.time())
+            ex1_eclipsed_time = current_time - ex1_last_time
+            ex2_eclipsed_time = current_time - ex2_last_time
+            ex1_agitating = False
+            ex2_agitating = False
+            if ex1_eclipsed_time >= Settings.ex1_AgitationInterval and not ex1_agitating:
+                Commands.Agitation(0)
+                ex1_last_time = current_time
+                ex1_agitating = True
+                Settings.agitating = True
+            if ex1_eclipsed_time >= Settings.ex1_AgitationDuration and ex1_agitating:
+                Settings.agitating = False
+                Commands.Power_Update()
+                if Settings.gradient_running:
+                    Commands.Gradient_Update()
+                else:
+                    Commands.slider_Released()
+                ex1_last_time = current_time
+                ex1_agitating = False
+
+            if ex2_eclipsed_time >= Settings.ex2_AgitationInterval and not ex2_agitating:
+                Commands.Agitation(1)
+                ex2_last_time = current_time
+                ex2_agitating = True
+                Settings.agitating = True
+            if ex2_eclipsed_time >= Settings.ex2_AgitationDuration and ex1_agitating:
+                Settings.agitating = False
+                Commands.Power_Update()
+                if Settings.gradient_running:
+                    Commands.Gradient_Update()
+                else:
+                    Commands.slider_Released()
+                ex2_last_time = current_time
+                ex2_agitating = False
+
+
 class ex1Agitation(QThread):
 
     def __init__(self):

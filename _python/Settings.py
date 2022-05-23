@@ -67,10 +67,21 @@ def init():
     global gradient_running
     gradient_running = False
 
+    global agitation_running
+    agitation_running = False
+
+    global agitating
+    agitating = False
+
     global ex1_AgitationDuration
     ex1_AgitationDuration = 2
     global ex2_AgitationDuration
     ex2_AgitationDuration = 2
+
+    global ex1_AgitationInterval
+    ex1_AgitationInterval = 10
+    global ex2_AgitationInterval
+    ex2_AgitationInterval = 10
 
     global interval_time
     interval_time = 5
@@ -115,7 +126,7 @@ def sendCMD(cont):
     print("sending command...\n" + cont)
     temp = cont + "\n"
     try:
-        while Settings.i2cbusy:
+        while Settings.i2cbusy or Settings.agitating:
             pass
 
         Settings.i2cbusy = True
