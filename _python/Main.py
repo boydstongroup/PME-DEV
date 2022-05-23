@@ -71,6 +71,10 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
 
         self.startGradient_pushButton.clicked.connect(
             lambda: Call_Thread.start_Gradient(self))
+
+        self.ex1Agitate_pushButton.clicked.connect(
+            lambda: Call_Thread.start_ex1Agitation(self))
+
         # self.startImaging_pushButton.clicked.connect(
         #     lambda: Call_Thread.start_timelapse(self))
         # self.preview_pushButton.clicked.connect(

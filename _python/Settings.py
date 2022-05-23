@@ -67,6 +67,11 @@ def init():
     global gradient_running
     gradient_running = False
 
+    global ex1_AgitationDuration
+    ex1_AgitationDuration = 2
+    global ex2_AgitationDuration
+    ex2_AgitationDuration = 2
+
     global interval_time
     interval_time = 5
 

@@ -68,3 +68,16 @@ def Gradient_Update():
         str(Settings.ex2_currentLimit) + "~" + \
         str(Settings.ex2_CurrentInterval)
     Settings.sendCMD(CMD)
+
+
+def Agitation(mot):
+    if mot == 0:
+        if gradient_running:
+            CMD = "1~2~2~" + str(Settings.ex1_currentLimit) + "~300" + "~" + str(Settings.ex2_GeneralMicrostep) + \
+                "~" + str(Settings.ex2_currentLimit) + "~" + \
+                str(Settings.ex2_CurrentInterval)
+        else:
+            CMD = "1~2~2~" + str(Settings.ex1_currentLimit) + "~300" + "~" + str(Settings.ex2_GeneralMicrostep) + \
+                "~" + str(Settings.ex2_currentLimit) + "~" + \
+                str(Settings.ex2_GeneralInterval)
+    Settings.sendCMD(CMD)

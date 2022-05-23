@@ -31,8 +31,6 @@ class Gradient(QThread):
         Commands.Gradient_Update()
         ex1_last_time = round(time.time() * 1000)
         ex2_last_time = ex1_last_time
-        print(Settings.ex1_GradientInterval)
-        print(Settings.ex2_GradientInterval)
         while Settings.ex1_FinalInterval != Settings.ex1_CurrentInterval and Settings.ex2_FinalInterval != Settings.ex2_CurrentInterval and Settings.gradient_running:
             current_time = round(time.time() * 1000)
             ex1_eclipsed_time = current_time - ex1_last_time
@@ -56,6 +54,23 @@ class Gradient(QThread):
                 Commands.Gradient_Update()
                 self.update.emit()
         Settings.gradient_running = False
+
+
+class ex1Agitation(QThread):
+
+    def __init__(self):
+        QThread.__init__(self)
+
+    def __del__(self):
+        self._running = False
+
+    def run(self):
+        Commands.Agitation(0)
+        sleep(Settings.ex1_AgitationDuration)
+        if gradient_running:
+            Commands.Gradient_Update()
+        else:
+            Commands.slider_Released()
 
 # class Interval(QThread):
 #

@@ -76,3 +76,14 @@ def gradient_validate(self):
         self.startGradient_pushButton.setEnabled(True)
     else:
         self.startGradient_pushButton.setEnabled(False)
+
+
+def Agitation_start(self, mot):
+    if mot == 0:
+        Settings.ex1_AgitationDuration = self.ex1AgitateDuration_spinBox.value()
+        self.ex1Agitate_pushButton.setEnabled(False)
+
+
+def Agitation_complete(self, mot):
+    if mot == 0:
+        self.ex1Agitate_pushButton.setEnabled(True)
