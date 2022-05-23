@@ -45,10 +45,10 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
         self.ex2_verticalSlider.valueChanged.connect(
             lambda: Functions.slider_change(1, self))
 
-        self.ex1_verticalSlider.sliderReleased.connect(
-            lambda: Commands.slider_Released())
-        self.ex2_verticalSlider.sliderReleased.connect(
-            lambda: Commands.slider_Released())
+        # self.ex1_verticalSlider.sliderReleased.connect(
+        #     lambda: Commands.slider_Released())
+        # self.ex2_verticalSlider.sliderReleased.connect(
+        #     lambda: Commands.slider_Released())
 
         self.ex1Current_spinBox.valueChanged.connect(
             lambda: Functions.settings_change(0, self))
