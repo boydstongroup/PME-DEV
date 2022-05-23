@@ -68,7 +68,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="Frame_tab">
      <attribute name="title">
@@ -838,6 +838,18 @@
               <property name="suffix">
                <string> s</string>
               </property>
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <number>10</number>
+              </property>
+              <property name="singleStep">
+               <number>1</number>
+              </property>
+              <property name="value">
+               <number>2</number>
+              </property>
              </widget>
             </item>
            </layout>
@@ -855,6 +867,12 @@
              <widget class="QSpinBox" name="ex2AgitateInterval_spinBox">
               <property name="suffix">
                <string> s</string>
+              </property>
+              <property name="minimum">
+               <number>10</number>
+              </property>
+              <property name="maximum">
+               <number>1000</number>
               </property>
              </widget>
             </item>
@@ -892,6 +910,15 @@
               <property name="suffix">
                <string> s</string>
               </property>
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <number>10</number>
+              </property>
+              <property name="value">
+               <number>2</number>
+              </property>
              </widget>
             </item>
            </layout>
@@ -909,6 +936,12 @@
              <widget class="QSpinBox" name="ex1AgitateInterval_spinBox">
               <property name="suffix">
                <string> s</string>
+              </property>
+              <property name="minimum">
+               <number>10</number>
+              </property>
+              <property name="maximum">
+               <number>1000</number>
               </property>
              </widget>
             </item>

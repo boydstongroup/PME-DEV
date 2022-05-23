@@ -55,6 +55,7 @@ class Gradient(QThread):
             if updated:
                 Commands.Gradient_Update()
                 self.update.emit()
+        Settings.gradient_running = False
 
 # class Interval(QThread):
 #
