@@ -398,7 +398,7 @@ class Ui_MainWindow(object):
         self.actionCreate_Timelapse.setObjectName("actionCreate_Timelapse")
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
         self.ex2General_comboBox.setCurrentIndex(7)
         self.ex1General_comboBox.setCurrentIndex(7)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
