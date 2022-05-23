@@ -2,8 +2,8 @@ import Settings
 import Commands
 import UI_Update
 import Functions
-# import Threads
-# import Call_Thread
+import Threads
+import Call_Thread
 # import os
 # import time
 
@@ -59,6 +59,15 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
             lambda: Functions.settings_change(0, self))
         self.ex2General_comboBox.currentIndexChanged.connect(
             lambda: Functions.settings_change(1, self))
+
+        self.ex1Initial_spinBox.valueChanged.connect(
+            lambda: UI_Update.gradient_validate(self))
+        self.ex2Final_spinBox.valueChanged.connect(
+            lambda: UI_Update.gradient_validate(self))
+        self.ex1Initial_spinBox.valueChanged.connect(
+            lambda: UI_Update.gradient_validate(self))
+        self.ex2Final_spinBox.valueChanged.connect(
+            lambda: UI_Update.gradient_validate(self))
 
         self.startGradient_pushButton.clicked.connect(
             lambda: Call_Thread.start_Gradient(self))

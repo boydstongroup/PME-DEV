@@ -1,21 +1,23 @@
 import Settings
-import Functions
-import socket
-import board
-import busio
-import os
-import timeit
-import time
 import Commands
-import adafruit_mma8451
-import adafruit_bme280
+import time
+# import Functions
+# import socket
+# import board
+# import busio
+# import os
+# import timeit
+
+
+# import adafruit_mma8451
+# import adafruit_bme280
 
 from time import sleep
 from PyQt5.QtCore import QThread, pyqtSignal
 from picamera import PiCamera
 
 
-class Cycle(QThread):
+class Gradient(QThread):
     update = pyqtSignal()
 
     def __init__(self):
