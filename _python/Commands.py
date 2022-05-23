@@ -99,4 +99,9 @@ def Agitation(mot):
             CMD = "1~2~" + str(Settings.ex1_GeneralMicrostep) + "~" + str(Settings.ex1_currentLimit) + \
                 "~" + str(Settings.ex1_GeneralInterval) + "~2~" + \
                 str(Settings.ex2_currentLimit) + "~400"
+    elif mot == 2:
+        CMD = "1~0~0~0"
+        Settings.sendCMD(CMD)
+        CMD = "1~2~2~" + str(Settings.ex1_currentLimit) + \
+            "~400~2~" + str(Settings.ex2_currentLimit) + "~400"
     Settings.sendCMD(CMD)

@@ -67,46 +67,18 @@ class Agitation(QThread):
     def run(self):
         Settings.agitation_running = True
         ex1_last_time = round(time.time())
-        ex2_last_time = ex1_last_time
         while Settings.agitation_running:
             current_time = round(time.time())
             ex1_eclipsed_time = current_time - ex1_last_time
-            ex2_eclipsed_time = current_time - ex2_last_time
-            ex1_agitating = False
-            ex2_agitating = False
-            if ex1_eclipsed_time >= Settings.ex1_AgitationInterval and not ex1_agitating:
-                Commands.Agitation(0)
+            if ex1_eclipsed_time >= Settings.ex1_AgitationInterval:
+                Commands.Agitation(2)
                 ex1_last_time = current_time
-                ex1_agitating = True
-                print("start1")
-                # Settings.agitating = True
-            elif ex1_eclipsed_time >= Settings.ex1_AgitationDuration and ex1_agitating:
-                Settings.agitating = False
-                print("stop1")
+                sleep(Settings.ex1_AgitationDuration)
                 Commands.Power_Update()
                 if Settings.gradient_running:
                     Commands.Gradient_Update()
                 else:
                     Commands.slider_Released()
-                ex1_last_time = current_time
-                ex1_agitating = False
-
-            if ex2_eclipsed_time >= Settings.ex2_AgitationInterval and not ex2_agitating:
-                Commands.Agitation(1)
-                ex2_last_time = current_time
-                ex2_agitating = True
-                print("start2")
-                # Settings.agitating = True
-            elif ex2_eclipsed_time >= Settings.ex2_AgitationDuration and ex2_agitating:
-                Settings.agitating = False
-                print("stop2")
-                Commands.Power_Update()
-                if Settings.gradient_running:
-                    Commands.Gradient_Update()
-                else:
-                    Commands.slider_Released()
-                ex2_last_time = current_time
-                ex2_agitating = False
 
 
 class ex1Agitation(QThread):
