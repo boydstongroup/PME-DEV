@@ -9,15 +9,18 @@ import os
 
 
 def start_Gradient(self):
-    self.Gradient_Thread = Threads.Gradient()
-    self.Gradient_Thread.update.connect(
-        lambda: UI_Update.gradient_update(self))
-    self.Gradient_Thread.started.connect(
-        lambda: UI_Update.gradient_start(self))
-    self.Gradient_Thread.finished.connect(
-        lambda: UI_Update.gradient_complete(self))
+    if not Settings.gradient_running:
+        self.Gradient_Thread = Threads.Gradient()
+        self.Gradient_Thread.update.connect(
+            lambda: UI_Update.gradient_update(self))
+        self.Gradient_Thread.started.connect(
+            lambda: UI_Update.gradient_start(self))
+        self.Gradient_Thread.finished.connect(
+            lambda: UI_Update.gradient_complete(self))
 
-    self.Gradient_Thread.start()
+        self.Gradient_Thread.start()
+    else:
+        Settings.gradient_running = False
 
 
 # def start_preview(self):

@@ -56,16 +56,14 @@ def gradient_start(self):
 
     Settings.ex1_GradientInterval = (
         self.ex1Duration_spinBox.value() * 60000) / (abs(self.ex1Final_spinBox.value() - self.ex1Initial_spinBox.value()))
-    print(self.ex1Duration_spinBox.value())
-    print(abs(self.ex1Final_spinBox.value() - self.ex1Initial_spinBox.value()))
     Settings.ex2_GradientInterval = (
         self.ex2Duration_spinBox.value() * 60000) / (abs(self.ex2Final_spinBox.value() - self.ex2Initial_spinBox.value()))
+    self.startGradient_pushButton.setText("END EXTRUSION GRADIENT")
     gradient_update(self)
 
 
 def gradient_complete(self):
-    self.ex1_lcdNumber.display(Settings.ex1_CurrentInterval)
-    self.ex2_lcdNumber.display(Settings.ex2_CurrentInterval)
+    self.startGradient_pushButton.setText("START EXTRUSION GRADIENT")
 
 
 def gradient_update(self):

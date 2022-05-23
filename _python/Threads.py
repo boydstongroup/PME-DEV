@@ -27,12 +27,13 @@ class Gradient(QThread):
         self._running = False
 
     def run(self):
+        Settings.gradient_running = True
         Commands.Gradient_Update()
         ex1_last_time = round(time.time() * 1000)
         ex2_last_time = ex1_last_time
         print(Settings.ex1_GradientInterval)
         print(Settings.ex2_GradientInterval)
-        while Settings.ex1_FinalInterval != Settings.ex1_CurrentInterval and Settings.ex2_FinalInterval != Settings.ex2_CurrentInterval:
+        while Settings.ex1_FinalInterval != Settings.ex1_CurrentInterval and Settings.ex2_FinalInterval != Settings.ex2_CurrentInterval and Settings.gradient_running:
             current_time = round(time.time() * 1000)
             ex1_eclipsed_time = current_time - ex1_last_time
             ex2_eclipsed_time = current_time - ex2_last_time

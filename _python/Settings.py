@@ -64,8 +64,8 @@ def init():
     global ex2_Increasing
     ex2_GradientDelta = False
 
-    global interval_running
-    interval_running = False
+    global gradient_running
+    gradient_running = False
 
     global interval_time
     interval_time = 5
@@ -119,7 +119,6 @@ def sendCMD(cont):
         for b in temp:
             converted.append(ord(b))
         bus.write_i2c_block_data(0x08, i2c_cmd, converted)
-        time.sleep(0.02)
         Settings.i2cbusy = False
     except Exception as e:
         print(e, "command send failure,contact Jerry for support")
