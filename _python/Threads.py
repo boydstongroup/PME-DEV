@@ -35,14 +35,14 @@ class Gradient(QThread):
             ex1_eclipsed_time = current_time - ex1_last_time
             ex2_eclipsed_time = current_time - ex2_last_time
             updated = False
-            if ex1_eclipsed_time >= ex1_GradientInterval:
+            if ex1_eclipsed_time >= Settings.ex1_GradientInterval:
                 if Settings.ex1_Increasing:
                     Settings.ex1_CurrentInterval += 1
                 else:
                     Settings.ex1_CurrentInterval -= 1
                 ex1_last_time = current_time
                 updated = True
-            if ex2_eclipsed_time >= ex2_GradientInterval:
+            if ex2_eclipsed_time >= Settings.ex2_GradientInterval:
                 if Settings.ex2_Increasing:
                     Settings.ex2_CurrentInterval += 1
                 else:

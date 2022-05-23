@@ -59,11 +59,6 @@ def init():
     global ex2_CurrentInterval
     ex2_CurrentInterval = 400
 
-    global ex1_GradientDelta
-    ex1_GradientDelta = 10
-    global ex2_GradientDelta
-    ex2_GradientDelta = 10
-
     global ex1_Increasing
     ex1_Increasing = True
     global ex2_Increasing
