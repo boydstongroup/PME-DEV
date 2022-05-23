@@ -67,6 +67,7 @@ class ex1Agitation(QThread):
     def run(self):
         Commands.Agitation(0)
         sleep(Settings.ex1_AgitationDuration)
+        Commands.Power_Update()
         if Settings.gradient_running:
             Commands.Gradient_Update()
         else:
