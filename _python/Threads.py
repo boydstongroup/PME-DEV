@@ -78,7 +78,7 @@ class Agitation(QThread):
                 Commands.Agitation(0)
                 ex1_last_time = current_time
                 ex1_agitating = True
-                Settings.agitating = True
+                # Settings.agitating = True
             elif ex1_eclipsed_time >= Settings.ex1_AgitationDuration and ex1_agitating:
                 Settings.agitating = False
                 Commands.Power_Update()
@@ -93,7 +93,7 @@ class Agitation(QThread):
                 Commands.Agitation(1)
                 ex2_last_time = current_time
                 ex2_agitating = True
-                Settings.agitating = True
+                # Settings.agitating = True
             elif ex2_eclipsed_time >= Settings.ex2_AgitationDuration and ex2_agitating:
                 Settings.agitating = False
                 Commands.Power_Update()
