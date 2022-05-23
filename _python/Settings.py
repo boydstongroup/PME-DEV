@@ -110,8 +110,8 @@ def sendCMD(cont):
     print("sending command...\n" + cont)
     temp = cont + "\n"
     try:
-        if Settings.i2cbusy:
-            time.sleep(0.02)
+        while Settings.i2cbusy:
+            pass
 
         Settings.i2cbusy = True
         bus = smbus.SMBus(1)
@@ -119,7 +119,6 @@ def sendCMD(cont):
         for b in temp:
             converted.append(ord(b))
         bus.write_i2c_block_data(0x08, i2c_cmd, converted)
-        time.sleep(0.02)
         Settings.i2cbusy = False
     except Exception as e:
         print(e, "command send failure,contact Jerry for support")
