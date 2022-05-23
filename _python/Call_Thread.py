@@ -33,6 +33,16 @@ def start_ex1Agitation(self):
     self.ex1Agitation_Thread.start()
 
 
+def start_ex2Agitation(self):
+    self.ex2Agitation_Thread = Threads.ex2Agitation()
+    self.ex2Agitation_Thread.started.connect(
+        lambda: UI_Update.Agitation_start(self, 1))
+    self.ex2Agitation_Thread.finished.connect(
+        lambda: UI_Update.Agitation_complete(self, 1))
+
+    self.ex2Agitation_Thread.start()
+
+
 # def start_preview(self):
 #
 #     self.Preview_Thread = Threads.Preview()

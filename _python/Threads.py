@@ -73,6 +73,24 @@ class ex1Agitation(QThread):
         else:
             Commands.slider_Released()
 
+
+class ex2Agitation(QThread):
+
+    def __init__(self):
+        QThread.__init__(self)
+
+    def __del__(self):
+        self._running = False
+
+    def run(self):
+        Commands.Agitation(1)
+        sleep(Settings.ex2_AgitationDuration)
+        Commands.Power_Update()
+        if Settings.gradient_running:
+            Commands.Gradient_Update()
+        else:
+            Commands.slider_Released()
+
 # class Interval(QThread):
 #
 #     def __init__(self):

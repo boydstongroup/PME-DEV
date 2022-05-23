@@ -82,8 +82,13 @@ def Agitation_start(self, mot):
     if mot == 0:
         Settings.ex1_AgitationDuration = self.ex1AgitateDuration_spinBox.value()
         self.ex1Agitate_pushButton.setEnabled(False)
+    if mot == 1:
+        Settings.ex2_AgitationDuration = self.ex2AgitateDuration_spinBox.value()
+        self.ex2Agitate_pushButton.setEnabled(False)
 
 
 def Agitation_complete(self, mot):
     if mot == 0:
         self.ex1Agitate_pushButton.setEnabled(True)
+    if mot == 1:
+        self.ex2Agitate_pushButton.setEnabled(True)

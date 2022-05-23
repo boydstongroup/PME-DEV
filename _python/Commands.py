@@ -88,4 +88,15 @@ def Agitation(mot):
             CMD = "1~2~2~" + str(Settings.ex1_currentLimit) + "~300" + "~" + str(Settings.ex2_GeneralMicrostep) + \
                 "~" + str(Settings.ex2_currentLimit) + "~" + \
                 str(Settings.ex2_GeneralInterval)
+    elif mot == 1:
+        CMD = ("1~0~" + str(int(Settings.ex1_enabled)) + "~0")
+        Settings.sendCMD(CMD)
+        if Settings.gradient_running:
+            CMD = "1~2~" + str(Settings.ex1_GeneralMicrostep) + "~" + str(Settings.ex1_currentLimit) + \
+                "~" + str(Settings.ex1_CurrentInterval) + "~2~" + \
+                str(Settings.ex2_currentLimit) + "~400"
+        else:
+            CMD = "1~2~" + str(Settings.ex1_GeneralMicrostep) + "~" + str(Settings.ex1_currentLimit) + \
+                "~" + str(Settings.ex1_GeneralInterval) + "~2~" + \
+                str(Settings.ex2_currentLimit) + "~400"
     Settings.sendCMD(CMD)

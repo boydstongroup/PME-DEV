@@ -74,6 +74,8 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
 
         self.ex1Agitate_pushButton.clicked.connect(
             lambda: Call_Thread.start_ex1Agitation(self))
+        self.ex2Agitate_pushButton.clicked.connect(
+            lambda: Call_Thread.start_ex2Agitation(self))
 
         # self.startImaging_pushButton.clicked.connect(
         #     lambda: Call_Thread.start_timelapse(self))
