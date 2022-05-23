@@ -66,7 +66,7 @@ def gradient_complete(self):
     self.ex1_lcdNumber.display(Settings.ex2_CurrentInterval)
 
 
-def interval_update(self):
+def gradient_update(self):
     self.ex1_lcdNumber.display(Settings.ex1_CurrentInterval)
     self.ex1_lcdNumber.display(Settings.ex2_CurrentInterval)
 
