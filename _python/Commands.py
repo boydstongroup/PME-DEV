@@ -81,11 +81,11 @@ def Agitation(mot):
         CMD = ("1~0~0" + "~" + str(int(Settings.ex2_enabled)))
         Settings.sendCMD(CMD)
         if Settings.gradient_running:
-            CMD = "1~2~2~" + str(Settings.ex1_currentLimit) + "~400" + "~" + str(Settings.ex2_GeneralMicrostep) + \
+            CMD = "1~2~2~" + str(Settings.ex1_currentLimit) + "~350" + "~" + str(Settings.ex2_GeneralMicrostep) + \
                 "~" + str(Settings.ex2_currentLimit) + "~" + \
                 str(Settings.ex2_CurrentInterval)
         else:
-            CMD = "1~2~2~" + str(Settings.ex1_currentLimit) + "~300" + "~" + str(Settings.ex2_GeneralMicrostep) + \
+            CMD = "1~2~2~" + str(Settings.ex1_currentLimit) + "~350" + "~" + str(Settings.ex2_GeneralMicrostep) + \
                 "~" + str(Settings.ex2_currentLimit) + "~" + \
                 str(Settings.ex2_GeneralInterval)
     elif mot == 1:
@@ -94,14 +94,14 @@ def Agitation(mot):
         if Settings.gradient_running:
             CMD = "1~2~" + str(Settings.ex1_GeneralMicrostep) + "~" + str(Settings.ex1_currentLimit) + \
                 "~" + str(Settings.ex1_CurrentInterval) + "~2~" + \
-                str(Settings.ex2_currentLimit) + "~400"
+                str(Settings.ex2_currentLimit) + "~350"
         else:
             CMD = "1~2~" + str(Settings.ex1_GeneralMicrostep) + "~" + str(Settings.ex1_currentLimit) + \
                 "~" + str(Settings.ex1_GeneralInterval) + "~2~" + \
-                str(Settings.ex2_currentLimit) + "~400"
+                str(Settings.ex2_currentLimit) + "~350"
     elif mot == 2:
         CMD = "1~0~0~0"
         Settings.sendCMD(CMD)
         CMD = "1~2~2~" + str(Settings.ex1_currentLimit) + \
-            "~400~2~" + str(Settings.ex2_currentLimit) + "~400"
+            "~350~2~" + str(Settings.ex2_currentLimit) + "~350"
     Settings.sendCMD(CMD)
