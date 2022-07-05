@@ -13,6 +13,10 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 
 import PME_UI
 
+from PyQt5 import QtWidgets, uic
+from pyqtgraph import PlotWidget
+import pyqtgraph as pg
+
 
 class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
 
