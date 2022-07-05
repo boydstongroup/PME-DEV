@@ -9,7 +9,7 @@ class MainWindow(QtWidgets.QMainWindow):
         super(MainWindow, self).__init__(*args, **kwargs)
 
         #Load the UI Page
-        uic.loadUi('mainwindow.ui', self)
+        uic.loadUi('PME_UI.ui', self)
 
 
 def main():
