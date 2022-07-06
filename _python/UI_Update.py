@@ -3,13 +3,17 @@ import Settings
 import Commands
 from PyQt5.QtGui import QImage, QPixmap
 
+
 def init(self):
     self.graphWidget.setBackground('#fbfbfb')
     self.graphWidget.showGrid(x=True, y=True)
-    Settings.graph_ref=self.graphWidget.plot(Settings.current_time,Settings.current_weight)
+    Settings.graph_ref = self.graphWidget.plot(
+        Settings.current_time, Settings.current_weight)
+
 
 def graph_update(self):
-    Settings.graph_ref.setData(Settings.current_time++,Settings.current_weight)
+    Settings.graph_ref.setData(Settings.current_time, Settings.current_weight)
+    Settings.current_time += 1
 
 
 def link(self):
