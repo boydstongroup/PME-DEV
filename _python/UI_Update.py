@@ -8,7 +8,7 @@ from pyqtgraph import mkPen
 def init(self):
     self.graphWidget.setBackground('#fbfbfb')
     self.graphWidget.showGrid(x=True, y=True)
-    pen = pyqtgraph.mkPen(color=(255, 0, 0),width=3)
+    pen = mkPen(color=(255, 0, 0),width=3)
     Settings.graph_ref = self.graphWidget.plot(
         Settings.current_time, Settings.current_weight, pen=pen)
     styles = {'color':'r', 'font-size':'10px'}
