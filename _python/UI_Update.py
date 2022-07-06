@@ -11,7 +11,7 @@ def init(self):
     pen = mkPen(color=(255, 0, 0),width=3)
     Settings.graph_ref = self.graphWidget.plot(
         Settings.current_time, Settings.current_weight, pen=pen)
-    styles = {'color':'r', 'font-size':'10px'}
+    styles = {'color':'r', 'font-size':'15px'}
     self.graphWidget.setLabel('left', 'Weight (g)', **styles)
     self.graphWidget.setLabel('bottom', 'Time (s)', **styles)
 
