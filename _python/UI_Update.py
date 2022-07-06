@@ -2,12 +2,13 @@ import os
 import Settings
 import Commands
 from PyQt5.QtGui import QImage, QPixmap
+from pyqtgraph import mkPen
 
 
 def init(self):
     self.graphWidget.setBackground('#fbfbfb')
     self.graphWidget.showGrid(x=True, y=True)
-    pen = pg.mkPen(color=(255, 0, 0),width=3)
+    pen = pyqtgraph.mkPen(color=(255, 0, 0),width=3)
     Settings.graph_ref = self.graphWidget.plot(
         Settings.current_time, Settings.current_weight, pen=pen)
     styles = {'color':'r', 'font-size':'10px'}
