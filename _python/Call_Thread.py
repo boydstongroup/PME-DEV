@@ -59,7 +59,7 @@ def start_ex2Agitation(self):
 def start_Collection(self):
     if not Settings.collection_running:
         self.Collection_Thread = Threads.Collect()
-        self.Gradient_Thread.update.connect(
+        self.Collection_Thread.update.connect(
             lambda: UI_Update.graph_update(self))
         # self.Gradient_Thread.started.connect(
         #     lambda: UI_Update.gradient_start(self))
