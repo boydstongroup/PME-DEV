@@ -400,6 +400,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.addWidget(self.startAgitation_pushButton)
         self.label_24 = QtWidgets.QLabel(self.centralwidget)
         self.label_24.setGeometry(QtCore.QRect(680, 20, 320, 320))
+        self.label_24.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.label_24.setFrameShadow(QtWidgets.QFrame.Raised)
         self.label_24.setText("")
         self.label_24.setPixmap(QtGui.QPixmap("../_images/Background.png"))
         self.label_24.setObjectName("label_24")

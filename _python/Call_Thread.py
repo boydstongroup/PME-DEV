@@ -69,6 +69,7 @@ def start_Collection(self):
         self.Collection_Thread.start()
     else:
         Settings.collection_running = False
+        self.graphWidget.clear()
 
 
 # def start_preview(self):

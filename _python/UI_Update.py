@@ -7,13 +7,16 @@ from PyQt5.QtGui import QImage, QPixmap
 def init(self):
     self.graphWidget.setBackground('#fbfbfb')
     self.graphWidget.showGrid(x=True, y=True)
+    pen = pg.mkPen(color=(255, 0, 0),width=3)
     Settings.graph_ref = self.graphWidget.plot(
-        Settings.current_time, Settings.current_weight)
-
+        Settings.current_time, Settings.current_weight, pen=pen)
+    styles = {'color':'r', 'font-size':'10px'}
+    self.graphWidget.setLabel('left', 'Weight (g)', **styles)
+    self.graphWidget.setLabel('bottom', 'Time (s)', **styles)
 
 def graph_update(self):
-    Settings.current_time.append(Settings.current_time[-1]+1)
-    Settings.graph_ref.setData(Settings.current_time,Settings.current_weight)
+    Settings.current_time.append(Settings.current_time[-1] + 1)
+    Settings.graph_ref.setData(Settings.current_time, Settings.current_weight)
 
 
 def link(self):
