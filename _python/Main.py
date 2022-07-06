@@ -24,6 +24,7 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
 
         Settings.init()
         Commands.init()
+        UI_Upate.init()
 
         self.ex1Enable_pushButton.clicked.connect(
             lambda: Commands.motor_toggle(0, self))
@@ -81,8 +82,6 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
 
         self.startAgitation_pushButton.clicked.connect(
             lambda: Call_Thread.start_agitation(self))
-        self.graphWidget.setBackground('#fbfbfb')
-        self.graphWidget.plot([1,2,3,4,5,6,7,8,9,10], [30,32,34,32,33,31,29,32,35,45])
 
         # self.startImaging_pushButton.clicked.connect(
         #     lambda: Call_Thread.start_timelapse(self))

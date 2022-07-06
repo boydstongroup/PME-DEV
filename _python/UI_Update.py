@@ -3,6 +3,10 @@ import Settings
 import Commands
 from PyQt5.QtGui import QImage, QPixmap
 
+def init(self):
+    self.graphWidget.setBackground('#fbfbfb')
+    Settings.graph_ref=self.graphWidget.plot([1,2,3,4,5,6,7,8,9,10], [30,32,34,32,33,31,29,32,35,45])
+    self.graphWidget.showGrid(x=True, y=True)
 
 def link(self):
     if Settings.LINKED:

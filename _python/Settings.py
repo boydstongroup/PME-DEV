@@ -101,6 +101,9 @@ def init():
     global sample_time
     sample_time = 0
 
+    global graph_ref 
+    graph_ref=''
+
     global forward
     forward = QtGui.QIcon()
     forward.addPixmap(QtGui.QPixmap("../_images/Forward.png"),
