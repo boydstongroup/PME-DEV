@@ -8,12 +8,12 @@ def init(self):
     self.graphWidget.setBackground('#fbfbfb')
     self.graphWidget.showGrid(x=True, y=True)
     Settings.graph_ref = self.graphWidget.plot(
-        Settings.current_time, Settings.current_weight)
+        Settings.current_time[0], Settings.current_weight[0])
 
 
 def graph_update(self):
-    Settings.graph_ref.setData(int(Settings.current_time), int(Settings.current_weight))
-    Settings.current_time += 1
+    Settings.current_time.append(Settings.current_time[-1]+1)
+    Settings.graph_ref.setData(Settings.current_time,Settings.current_weight)
 
 
 def link(self):
