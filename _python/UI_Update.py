@@ -8,7 +8,7 @@ def init(self):
     self.graphWidget.setBackground('#fbfbfb')
     self.graphWidget.showGrid(x=True, y=True)
     Settings.graph_ref = self.graphWidget.plot(
-        Settings.current_time[0], Settings.current_weight[0])
+        Settings.current_time, Settings.current_weight)
 
 
 def graph_update(self):
