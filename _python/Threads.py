@@ -133,7 +133,7 @@ class Collect(QThread):
         Settings.collection_running = True
         hx = HX711(15, 14)
         hx.set_reading_format("MSB", "MSB")
-        hx.set_reference_unit(referenceUnit)
+        hx.set_reference_unit(Settings.scale_referenceUnit)
         hx.reset()
         hx.tare()
 
