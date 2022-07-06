@@ -16,7 +16,7 @@ class HX711:
         # Mutex for reading from the HX711, in case multiple threads in client
         # software try to access get values from the class at the same time.
         self.readLock = threading.Lock()
-        
+
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.PD_SCK, GPIO.OUT)
         GPIO.setup(self.DOUT, GPIO.IN)
@@ -42,21 +42,21 @@ class HX711:
         # Think about whether this is necessary.
         time.sleep(1)
 
-        
+
     def convertFromTwosComplement24bit(self, inputValue):
         return -(inputValue & 0x800000) + (inputValue & 0x7fffff)
 
-    
+
     def is_ready(self):
         return GPIO.input(self.DOUT) == 0
 
-    
+
     def set_gain(self, gain):
-        if gain is 128:
+        if gain == 128:
             self.GAIN = 1
-        elif gain is 64:
+        elif gain == 64:
             self.GAIN = 3
-        elif gain is 32:
+        elif gain == 32:
             self.GAIN = 2
 
         GPIO.output(self.PD_SCK, False)
@@ -64,7 +64,7 @@ class HX711:
         # Read out a set of raw bytes and throw it away.
         self.readRawBytes()
 
-        
+
     def get_gain(self):
         if self.GAIN == 1:
             return 128
@@ -75,7 +75,7 @@ class HX711:
 
         # Shouldn't get here.
         return 0
-        
+
 
     def readNextBit(self):
        # Clock HX711 Digital Serial Clock (PD_SCK).  DOUT will be
@@ -99,12 +99,12 @@ class HX711:
              byteValue <<= 1
              byteValue |= self.readNextBit()
           else:
-             byteValue >>= 1              
+             byteValue >>= 1
              byteValue |= self.readNextBit() * 0x80
 
        # Return the packed byte.
-       return byteValue 
-        
+       return byteValue
+
 
     def readRawBytes(self):
         # Wait for and get the Read Lock, incase another thread is already
@@ -128,7 +128,7 @@ class HX711:
 
         # Release the Read Lock, now that we've finished driving the HX711
         # serial interface.
-        self.readLock.release()           
+        self.readLock.release()
 
         # Depending on how we're configured, return an orderd list of raw byte
         # values.
@@ -145,7 +145,7 @@ class HX711:
 
         if self.DEBUG_PRINTING:
             print(dataBytes,)
-        
+
         # Join the raw bytes into a single 24bit 2s complement value.
         twosComplementValue = ((dataBytes[0] << 16) |
                                (dataBytes[1] << 8)  |
@@ -153,7 +153,7 @@ class HX711:
 
         if self.DEBUG_PRINTING:
             print("Twos: 0x%06x" % twosComplementValue)
-        
+
         # Convert from 24bit twos-complement to a signed value.
         signedIntValue = self.convertFromTwosComplement24bit(twosComplementValue)
 
@@ -163,7 +163,7 @@ class HX711:
         # Return the sample value we've read from the HX711.
         return int(signedIntValue)
 
-    
+
     def read_average(self, times=3):
         # Make sure we've been asked to take a rational amount of samples.
         if times <= 0:
@@ -202,7 +202,7 @@ class HX711:
     def read_median(self, times=3):
        if times <= 0:
           raise ValueError("HX711::read_median(): times must be greater than zero!")
-      
+
        # If times == 1, just return a single reading.
        if times == 1:
           return self.read_long()
@@ -256,22 +256,22 @@ class HX711:
         value = value / self.REFERENCE_UNIT_B
         return value
 
-    
+
     # Sets tare for channel A for compatibility purposes
     def tare(self, times=15):
         return self.tare_A(times)
-    
-    
+
+
     def tare_A(self, times=15):
         # Backup REFERENCE_UNIT value
         backupReferenceUnit = self.get_reference_unit_A()
         self.set_reference_unit_A(1)
-        
+
         value = self.read_average(times)
 
         if self.DEBUG_PRINTING:
             print("Tare A value:", value)
-        
+
         self.set_offset_A(value)
 
         # Restore the reference unit, now that we've got our offset.
@@ -293,17 +293,17 @@ class HX711:
 
         if self.DEBUG_PRINTING:
             print("Tare B value:", value)
-        
+
         self.set_offset_B(value)
 
         # Restore gain/channel/reference unit settings.
         self.set_gain(backupGain)
         self.set_reference_unit_B(backupReferenceUnit)
-       
+
         return value
 
 
-    
+
     def set_reading_format(self, byte_format="LSB", bit_format="MSB"):
         if byte_format == "LSB":
             self.byte_format = byte_format
@@ -319,7 +319,7 @@ class HX711:
         else:
             raise ValueError("Unrecognised bitformat: \"%s\"" % bit_format)
 
-            
+
 
 
     # sets offset for channel A for compatibility reasons
@@ -342,11 +342,11 @@ class HX711:
         return self.OFFSET_B
 
 
-    
+
     def set_reference_unit(self, reference_unit):
         self.set_reference_unit_A(reference_unit)
 
-        
+
     def set_reference_unit_A(self, reference_unit):
         # Make sure we aren't asked to use an invalid reference unit.
         if reference_unit == 0:
@@ -355,7 +355,7 @@ class HX711:
 
         self.REFERENCE_UNIT = reference_unit
 
-        
+
     def set_reference_unit_B(self, reference_unit):
         # Make sure we aren't asked to use an invalid reference unit.
         if reference_unit == 0:
@@ -368,15 +368,15 @@ class HX711:
     def get_reference_unit(self):
         return get_reference_unit_A()
 
-        
+
     def get_reference_unit_A(self):
         return self.REFERENCE_UNIT
 
-        
+
     def get_reference_unit_B(self):
         return self.REFERENCE_UNIT_B
-        
-        
+
+
     def power_down(self):
         # Wait for and get the Read Lock, incase another thread is already
         # driving the HX711 serial interface.
@@ -392,7 +392,7 @@ class HX711:
 
         # Release the Read Lock, now that we've finished driving the HX711
         # serial interface.
-        self.readLock.release()           
+        self.readLock.release()
 
 
     def power_up(self):
