@@ -12,7 +12,7 @@ def init(self):
 
 
 def graph_update(self):
-    Settings.graph_ref.setData(Settings.current_time, Settings.current_weight)
+    Settings.graph_ref.setData(int(Settings.current_time), int(Settings.current_weight))
     Settings.current_time += 1
 
 
