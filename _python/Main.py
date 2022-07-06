@@ -9,7 +9,7 @@ import Call_Thread
 
 import sys
 
-from PyQt5.QtWidgets import QMainWindow, QApplicationc
+from PyQt5.QtWidgets import QMainWindow, QApplication
 
 from PyQt5.pyqtgraph import PlotWidget, plot
 
