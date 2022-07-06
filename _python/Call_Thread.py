@@ -56,14 +56,19 @@ def start_ex2Agitation(self):
 
     self.ex2Agitation_Thread.start()
 
-def start_ex2Agitation(self):
-    self.ex2Agitation_Thread = Threads.ex2Agitation()
-    self.ex2Agitation_Thread.started.connect(
-        lambda: UI_Update.Agitation_start(self, 1))
-    self.ex2Agitation_Thread.finished.connect(
-        lambda: UI_Update.Agitation_complete(self, 1))
+def start_Collection(self):
+    if not Settings.collection_running:
+        self.Collection_Thread = Threads.Collect()
+        # self.Gradient_Thread.update.connect(
+        #     lambda: UI_Update.gradient_update(self))
+        # self.Gradient_Thread.started.connect(
+        #     lambda: UI_Update.gradient_start(self))
+        # self.Gradient_Thread.finished.connect(
+        #     lambda: UI_Update.gradient_complete(self))
 
-    self.ex2Agitation_Thread.start()
+        self.Collection_Thread.start()
+    else:
+        Settings.collection_running = False
 
 
 # def start_preview(self):

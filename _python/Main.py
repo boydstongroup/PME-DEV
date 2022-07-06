@@ -75,6 +75,11 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
         self.startGradient_pushButton.clicked.connect(
             lambda: Call_Thread.start_Gradient(self))
 
+        self.startCollection_pushButton.clicked.connect(
+            lambda: Call_Thread.start_Collection(self))
+
+            Scale_pushButton
+
         self.ex1Agitate_pushButton.clicked.connect(
             lambda: Call_Thread.start_ex1Agitation(self))
         self.ex2Agitate_pushButton.clicked.connect(

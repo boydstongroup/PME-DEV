@@ -120,7 +120,7 @@ class ex2Agitation(QThread):
         else:
             Commands.slider_Released()
 
-class Weight(QThread):
+class Collect(QThread):
     update = pyqtSignal()
 
     def __init__(self):
@@ -130,27 +130,27 @@ class Weight(QThread):
         self._running = False
 
     def run(self):
+        Settings.collection_running = True
         hx = HX711(15, 14)
         hx.set_reading_format("MSB", "MSB")
         hx.set_reference_unit(referenceUnit)
         hx.reset()
         hx.tare()
 
-        Settings.weight_running = True
-        while Settings.weight_running:
-                    val = round(max(0.00, hx.get_weight(5)),2)
-                    print(val)
+        while Settings.collection_running:
+            val = round(max(0.00, hx.get_weight(5)),2)
+            print(val)
 
-                    # To get weight from both channels (if you have load cells hooked up
-                    # to both channel A and B), do something like this
-                    #val_A = hx.get_weight_A(5)
-                    #val_B = hx.get_weight_B(5)
-                    #print "A: %s  B: %s" % ( val_A, val_B )
+            # To get weight from both channels (if you have load cells hooked up
+            # to both channel A and B), do something like this
+            #val_A = hx.get_weight_A(5)
+            #val_B = hx.get_weight_B(5)
+            #print "A: %s  B: %s" % ( val_A, val_B )
 
-                    hx.power_down()
-                    hx.power_up()
-                    time.sleep(1)
-                self.update.emit()
+            hx.power_down()
+            hx.power_up()
+            time.sleep(1)
+            self.update.emit()
         Settings.gradient_running = False
 
 # class Interval(QThread):

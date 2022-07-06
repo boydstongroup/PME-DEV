@@ -70,6 +70,9 @@ def init():
     global agitation_running
     agitation_running = False
 
+    global collection_running
+    collection_running = False
+
     global agitating
     agitating = False
 
