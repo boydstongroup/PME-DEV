@@ -11,7 +11,7 @@ import sys
 
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
-from PyQt5.pyqtgraph import PlotWidget, plot
+from pyqtgraph import PlotWidget, plot
 
 import PME_UI
 
