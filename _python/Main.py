@@ -80,6 +80,8 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
         self.startAgitation_pushButton.clicked.connect(
             lambda: Call_Thread.start_agitation(self))
 
+        self.plot([1,2,3,4,5,6,7,8,9,10], [30,32,34,32,33,31,29,32,35,45])
+
         # self.startImaging_pushButton.clicked.connect(
         #     lambda: Call_Thread.start_timelapse(self))
         # self.preview_pushButton.clicked.connect(
@@ -146,6 +148,10 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
         #     lambda: Functions.fanspeed_update(self))
         # self.fanSpeed_horizontalSlider.valueChanged.connect(
         #     lambda: UI_Update.fanlabel_update(self))
+    def plot(self, time, weight):
+        self.graphWidget.plot(time, weight)
+
+
 
 
 def main():
