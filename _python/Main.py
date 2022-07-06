@@ -24,7 +24,7 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
 
         Settings.init()
         Commands.init()
-        UI_Upate.init()
+        UI_Update.init()
 
         self.ex1Enable_pushButton.clicked.connect(
             lambda: Commands.motor_toggle(0, self))
