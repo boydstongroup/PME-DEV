@@ -101,8 +101,11 @@ def init():
     global sample_time
     sample_time = 0
 
-    global graph_ref 
-    graph_ref=''
+    global graph_ref
+    graph_ref = ''
+
+    global scale_referenceUnit
+    scale_referenceUnit=450
 
     global forward
     forward = QtGui.QIcon()

@@ -1,6 +1,9 @@
 import Settings
 import Commands
 import time
+import sys
+import RPi.GPIO as GPIO
+from hx711 import HX711
 # import Functions
 # import socket
 # import board
@@ -54,7 +57,6 @@ class Gradient(QThread):
                 Commands.Gradient_Update()
                 self.update.emit()
         Settings.gradient_running = False
-
 
 class Agitation(QThread):
 
@@ -117,6 +119,39 @@ class ex2Agitation(QThread):
             Commands.Gradient_Update()
         else:
             Commands.slider_Released()
+
+class Weight(QThread):
+    update = pyqtSignal()
+
+    def __init__(self):
+        QThread.__init__(self)
+
+    def __del__(self):
+        self._running = False
+
+    def run(self):
+        hx = HX711(15, 14)
+        hx.set_reading_format("MSB", "MSB")
+        hx.set_reference_unit(referenceUnit)
+        hx.reset()
+        hx.tare()
+
+        Settings.weight_running = True
+        while Settings.weight_running:
+                    val = round(max(0.00, hx.get_weight(5)),2)
+                    print(val)
+
+                    # To get weight from both channels (if you have load cells hooked up
+                    # to both channel A and B), do something like this
+                    #val_A = hx.get_weight_A(5)
+                    #val_B = hx.get_weight_B(5)
+                    #print "A: %s  B: %s" % ( val_A, val_B )
+
+                    hx.power_down()
+                    hx.power_up()
+                    time.sleep(1)
+                self.update.emit()
+        Settings.gradient_running = False
 
 # class Interval(QThread):
 #
