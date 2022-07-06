@@ -104,6 +104,12 @@ def init():
     global sample_time
     sample_time = 0
 
+    global current_time
+    current_time = 0
+
+    global current_weight
+    current_weight = 0
+
     global graph_ref
     graph_ref = ''
 
