@@ -143,6 +143,7 @@ class Collect(QThread):
 
         self.initialized.emit()
         Settings.initial_time = round(time.perf_counter(), 2)
+        Settings.sample_time = Settings.initial_time - 1
 
         while Settings.collection_running:
             if(Settings.sample_time - Settings.initial_time >= 1):
