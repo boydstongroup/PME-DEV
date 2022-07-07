@@ -57,6 +57,7 @@ def start_ex2Agitation(self):
     self.ex2Agitation_Thread.start()
 
 def start_Collection(self):
+    self.graphWidget.clear()
     if not Settings.collection_running:
         self.Collection_Thread = Threads.Collect()
         self.Collection_Thread.update.connect(
@@ -71,7 +72,7 @@ def start_Collection(self):
         self.Collection_Thread.start()
     else:
         Settings.collection_running = False
-        # self.graphWidget.clear()
+        #
 
 
 # def start_preview(self):
