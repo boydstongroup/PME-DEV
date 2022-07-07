@@ -39,7 +39,7 @@ def graph_update(self):
         Settings.trend_time=[0,Settings.current_time[-1]]
         Settings.trend_weight=[b,(m*Settings.current_time[-1]+b)]
 
-        Settings.graph_ref.setData(Settings.trend_time, Settings.trend_weight)
+        Settings.trend_ref.setData(Settings.trend_time, Settings.trend_weight)
 
 
 def collection_start(self):
