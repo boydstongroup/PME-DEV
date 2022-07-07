@@ -2,6 +2,7 @@ import os
 import Settings
 import Commands
 import statistics
+import numpy as np
 from PyQt5.QtGui import QImage, QPixmap
 from pyqtgraph import mkPen
 
@@ -17,14 +18,16 @@ def init(self):
 def graph_update(self):
     Settings.current_time.append(Settings.sample_time - Settings.initial_time)
     Settings.graph_ref.setData(Settings.current_time, Settings.current_weight)
-    self.reading_label.setText("Live Reading: " + str(Settings.current_weight[-1])+"g")
-    self.stdev_label.setText("Standard Deviation: " + str(round(statistics.stdev(Settings.current_weight),2)))
-    self.average_label.setText("Average: " + str(round(statistics.mean(Settings.current_weight),2)+"g"))
+    self.reading_label.setText(
+        "Live Reading: " + str(Settings.current_weight[-1]) + "g")
+    self.stdev_label.setText(
+        "Standard Deviation: " + str(round(statistics.stdev(Settings.current_weight), 2)))
+    self.average_label.setText(
+        "Average: " + str(round(statistics.mean(Settings.current_weight), 2)) + "g")
 
-
-    print(statistics.stdev(Settings.current_weight))
-
-
+    m, b = np.polyfit(Settings.current_time, Settings.current_weight, 1)
+    self.linearFit_label.setText(
+        "Linear Regression: " + str(m) + "x+" + str(b))
 
 
 def collection_start(self):
@@ -35,8 +38,10 @@ def collection_start(self):
     self.startCollection_pushButton.setEnabled(False)
     self.startCollection_pushButton.setText("Initializing...")
 
+
 def zero(self):
-    Settings.zero=True
+    Settings.zero = True
+
 
 def collection_initialized(self):
     self.startCollection_pushButton.setEnabled(True)
