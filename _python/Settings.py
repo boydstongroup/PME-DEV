@@ -105,10 +105,10 @@ def init():
     sample_time = 0
 
     global current_time
-    current_time = [0]
+    current_time = []
 
     global current_weight
-    current_weight = [0]
+    current_weight = []
 
     global graph_ref
     graph_ref = ''
