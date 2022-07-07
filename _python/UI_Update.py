@@ -45,8 +45,9 @@ def collection_start(self):
     pen = mkPen(color=(197, 5, 12), width=2)
     Settings.graph_ref = self.graphWidget.plot(
         Settings.current_time, Settings.current_weight, pen=pen)
+    pen2 = mkPen(color=(4, 121, 168), width=1)
     Settings.trend_ref = self.graphWidget.plot(
-        Settings.trend_time, Settings.trend_weight, pen=pen)
+        Settings.trend_time, Settings.trend_weight, pen=pen2)
 
     self.startCollection_pushButton.setEnabled(False)
     self.startCollection_pushButton.setText("Initializing...")
