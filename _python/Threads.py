@@ -124,6 +124,7 @@ class ex2Agitation(QThread):
 
 class Collect(QThread):
     update = pyqtSignal()
+    initialized = pyqtSignal()
 
     def __init__(self):
         QThread.__init__(self)
