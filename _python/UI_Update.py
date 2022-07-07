@@ -16,9 +16,9 @@ def init(self):
 def graph_update(self):
     Settings.current_time.append(Settings.sample_time - Settings.initial_time)
     Settings.graph_ref.setData(Settings.current_time, Settings.current_weight)
-    self.reading_label.setText("Live Reading: " + Settings.current_weight[-1]+"g")
+    self.reading_label.setText("Live Reading: " + str(Settings.current_weight[-1])+"g")
 
-    
+
     print(Settings.sample_time - Settings.initial_time)
 
 
