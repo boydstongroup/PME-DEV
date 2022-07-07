@@ -4,7 +4,7 @@ import time
 import sys
 import RPi.GPIO as GPIO
 from hx711 import HX711
-from pyqtgraph import mkPen
+
 # import Functions
 # import socket
 # import board
@@ -141,9 +141,6 @@ class Collect(QThread):
         hx.reset()
         hx.tare()
 
-        pen = mkPen(color=(155, 0, 0), width=2)
-        Settings.graph_ref = self.graphWidget.plot(
-            Settings.current_time, Settings.current_weight, pen=pen)
         self.initialized.emit()
 
         while Settings.collection_running:

@@ -17,8 +17,14 @@ def graph_update(self):
     Settings.graph_ref.setData(Settings.current_time, Settings.current_weight)
 
 def collection_start(self):
+
+    pen = mkPen(color=(155, 0, 0), width=2)
+    Settings.graph_ref = self.graphWidget.plot(
+        Settings.current_time, Settings.current_weight, pen=pen)
+
     self.startCollection_pushButton.setEnabled(False)
     self.startCollection_pushButton.setText("Initializing...")
+
 
 def collection_initialized(self):
     self.startCollection_pushButton.setEnabled(True)
