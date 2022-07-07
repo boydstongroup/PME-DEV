@@ -14,8 +14,9 @@ def init(self):
 
 
 def graph_update(self):
-    Settings.current_time.append(Settings.current_time[-1] + 1)
+    Settings.current_time.append(Settings.sample_time - Settings.initial_time)
     Settings.graph_ref.setData(Settings.current_time, Settings.current_weight)
+    print(Settings.sample_time - Settings.initial_time)
 
 
 def collection_start(self):

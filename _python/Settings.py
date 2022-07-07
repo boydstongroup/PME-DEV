@@ -101,6 +101,9 @@ def init():
     global log_start_time
     log_start_time = 0
 
+    global initial_time
+    initial_time = 0
+
     global sample_time
     sample_time = 0
 
@@ -114,7 +117,7 @@ def init():
     graph_ref = ''
 
     global scale_referenceUnit
-    scale_referenceUnit=450
+    scale_referenceUnit = 450
 
     global forward
     forward = QtGui.QIcon()

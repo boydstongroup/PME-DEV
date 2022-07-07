@@ -142,12 +142,14 @@ class Collect(QThread):
         hx.tare()
 
         self.initialized.emit()
+        Settings.initial_time = time.perf_counter()
 
         while Settings.collection_running:
             try:
                 val = round(max(0.00, hx.get_weight(5)), 2)
                 if val < 0.2:
                     val = 0
+                Settings.sample_time = time.perf_counter()
                 # print(val)
 
                 # To get weight from both channels (if you have load cells hooked up
@@ -163,8 +165,6 @@ class Collect(QThread):
                 self.update.emit()
             except:
                 Settings.collection_running = False
-
-
 
 
 # class Interval(QThread):
