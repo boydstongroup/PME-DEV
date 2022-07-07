@@ -18,8 +18,8 @@ def graph_update(self):
     Settings.current_time.append(Settings.sample_time - Settings.initial_time)
     Settings.graph_ref.setData(Settings.current_time, Settings.current_weight)
     self.reading_label.setText("Live Reading: " + str(Settings.current_weight[-1])+"g")
-    self.stdev_label.setText("Standard Deviation: " + str(statistics.stdev(Settings.current_weight)))
-    self.average_label.setText("Average: " + str(statistics.mean(Settings.current_weight))+"g")
+    self.stdev_label.setText("Standard Deviation: " + str(round(statistics.stdev(Settings.current_weight),2)))
+    self.average_label.setText("Average: " + str(round(statistics.mean(Settings.current_weight),2)+"g"))
 
 
     print(statistics.stdev(Settings.current_weight))
