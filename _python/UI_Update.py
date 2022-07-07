@@ -44,10 +44,10 @@ def graph_update(self):
 
 
 def collection_start(self):
-    pen = mkPen(color=(197, 5, 12), width=2, style=QtCore.Qt.DashLine)
+    pen = mkPen(color=(197, 5, 12), width=2)
     Settings.graph_ref = self.graphWidget.plot(
         Settings.current_time, Settings.current_weight, pen=pen)
-    pen2 = mkPen(color=(4, 121, 168), width=1)
+    pen2 = mkPen(color=(4, 121, 168), width=1, style=QtCore.Qt.DashLine)
     Settings.trend_ref = self.graphWidget.plot(
         Settings.trend_time, Settings.trend_weight, pen=pen2)
 
