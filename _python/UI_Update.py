@@ -20,14 +20,15 @@ def graph_update(self):
     Settings.graph_ref.setData(Settings.current_time, Settings.current_weight)
     self.reading_label.setText(
         "Live Reading: " + str(Settings.current_weight[-1]) + "g")
-    self.stdev_label.setText(
-        "Standard Deviation: " + str(round(statistics.stdev(Settings.current_weight), 2)))
-    self.average_label.setText(
-        "Average: " + str(round(statistics.mean(Settings.current_weight), 2)) + "g")
+    if len(Settings.current_time) > 1:
+        self.stdev_label.setText(
+            "Standard Deviation: " + str(round(statistics.stdev(Settings.current_weight), 2)))
+        self.average_label.setText(
+            "Average: " + str(round(statistics.mean(Settings.current_weight), 2)) + "g")
 
-    m, b = np.polyfit(Settings.current_time, Settings.current_weight, 1)
-    self.linearFit_label.setText(
-        "Linear Regression: " + str(m) + "x+" + str(b))
+        m, b = np.polyfit(Settings.current_time, Settings.current_weight, 1)
+        self.linearFit_label.setText(
+            "Linear Regression: " + str(round(m,2)) + "x+" + str(round(b,2)))
 
 
 def collection_start(self):
