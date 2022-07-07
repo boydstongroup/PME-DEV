@@ -142,16 +142,16 @@ class Collect(QThread):
         hx.tare()
 
         self.initialized.emit()
-        Settings.initial_time = round(time.perf_counter(), 2)
-        Settings.sample_time = Settings.initial_time-1
+        Settings.initial_time = time.perf_counter()
+        Settings.sample_time = Settings.initial_time - 1
 
         while Settings.collection_running:
-            if(round(time.perf_counter(), 2) - Settings.sample_time >= 1):
+            if(time.perf_counter() - Settings.sample_time >= 1):
                 try:
                     val = round(max(0.00, hx.get_weight(5)), 2)
                     if val < 0.2:
                         val = 0
-                    Settings.sample_time = round(time.perf_counter(), 2)
+                    Settings.sample_time = time.perf_counter()
                     # print(val)
 
                     # To get weight from both channels (if you have load cells hooked up
