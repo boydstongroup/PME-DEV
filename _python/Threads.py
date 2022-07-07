@@ -143,7 +143,7 @@ class Collect(QThread):
             val = round(max(0.00, hx.get_weight(5)), 2)
             if val < 0.2:
                 val = 0
-            print(val)
+            # print(val)
 
             # To get weight from both channels (if you have load cells hooked up
             # to both channel A and B), do something like this
@@ -151,8 +151,8 @@ class Collect(QThread):
             #val_B = hx.get_weight_B(5)
             # print "A: %s  B: %s" % ( val_A, val_B )
 
-            hx.power_down()
-            hx.power_up()
+            # hx.power_down()
+            # hx.power_up()
             # time.sleep(0.1)
             Settings.current_weight.append(val)
             self.update.emit()
