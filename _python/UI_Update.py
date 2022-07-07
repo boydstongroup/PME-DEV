@@ -2,6 +2,7 @@ import os
 import Settings
 import Commands
 import statistics
+import PyQt5.QtCore
 import numpy as np
 from PyQt5.QtGui import QImage, QPixmap
 from pyqtgraph import mkPen
