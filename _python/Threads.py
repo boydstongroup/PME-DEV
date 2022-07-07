@@ -139,23 +139,29 @@ class Collect(QThread):
         hx.reset()
         hx.tare()
 
+        pen = mkPen(color=(155, 0, 0), width=2)
+        Settings.graph_ref = self.graphWidget.plot(
+            Settings.current_time, Settings.current_weight, pen=pen)
+        self.initialized.emit()
+
         while Settings.collection_running:
-            val = round(max(0.00, hx.get_weight(5)), 2)
-            if val < 0.2:
-                val = 0
-            # print(val)
+            try:
+                val = round(max(0.00, hx.get_weight(5)), 2)
+                if val < 0.2:
+                    val = 0
+                # print(val)
 
-            # To get weight from both channels (if you have load cells hooked up
-            # to both channel A and B), do something like this
-            #val_A = hx.get_weight_A(5)
-            #val_B = hx.get_weight_B(5)
-            # print "A: %s  B: %s" % ( val_A, val_B )
+                # To get weight from both channels (if you have load cells hooked up
+                # to both channel A and B), do something like this
+                #val_A = hx.get_weight_A(5)
+                #val_B = hx.get_weight_B(5)
+                # print "A: %s  B: %s" % ( val_A, val_B )
 
-            # hx.power_down()
-            # hx.power_up()
-            # time.sleep(0.1)
-            Settings.current_weight.append(val)
-            self.update.emit()
+                # hx.power_down()
+                # hx.power_up()
+                # time.sleep(0.1)
+                Settings.current_weight.append(val)
+                self.update.emit()
         Settings.gradient_running = False
 
 # class Interval(QThread):

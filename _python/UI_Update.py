@@ -8,9 +8,6 @@ from pyqtgraph import mkPen
 def init(self):
     self.graphWidget.setBackground('#fbfbfb')
     self.graphWidget.showGrid(x=True, y=True)
-    pen = mkPen(color=(255, 0, 0),width=3)
-    Settings.graph_ref = self.graphWidget.plot(
-        Settings.current_time, Settings.current_weight, pen=pen)
     styles = {'color':'r', 'font-size':'15px'}
     self.graphWidget.setLabel('left', 'Weight (g)', **styles)
     self.graphWidget.setLabel('bottom', 'Time (s)', **styles)
@@ -19,6 +16,19 @@ def graph_update(self):
     Settings.current_time.append(Settings.current_time[-1] + 1)
     Settings.graph_ref.setData(Settings.current_time, Settings.current_weight)
 
+def collection_start(self):
+    self.startCollection_pushButton.setEnabled(False)
+    self.startCollection_pushButton.setText("Initializing...")
+
+def collection_initialized(self):
+    self.startCollection_pushButton.setEnabled(True)
+    self.startCollection_pushButton.setText("Reset Collection")
+    self.reset_pushButton.setEnabled(True)
+
+def collection_complete(self):
+    self.startCollection_pushButton.setEnabled(True)
+    self.startCollection_pushButton.setText("Collect Data")
+    self.reset_pushButton.setEnabled(False)
 
 def link(self):
     if Settings.LINKED:

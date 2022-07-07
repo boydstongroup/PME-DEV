@@ -61,10 +61,12 @@ def start_Collection(self):
         self.Collection_Thread = Threads.Collect()
         self.Collection_Thread.update.connect(
             lambda: UI_Update.graph_update(self))
-        # self.Gradient_Thread.started.connect(
-        #     lambda: UI_Update.gradient_start(self))
-        # self.Gradient_Thread.finished.connect(
-        #     lambda: UI_Update.gradient_complete(self))
+        self.Collection_Thread.initialized.connect(
+            lambda: UI_Update.collection_initialized(self))
+        self.Collection_Thread.started.connect(
+            lambda: UI_Update.collection_start(self))
+        self.Collection_Thread.finished.connect(
+            lambda: UI_Update.collection_complete(self))
 
         self.Collection_Thread.start()
     else:
