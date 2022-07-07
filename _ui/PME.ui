@@ -814,6 +814,9 @@
          <layout class="QHBoxLayout" name="horizontalLayout_6">
           <item>
            <widget class="QPushButton" name="reset_pushButton">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="text">
              <string>Zero Scale</string>
             </property>

@@ -146,6 +146,7 @@ class Collect(QThread):
         Settings.sample_time = Settings.initial_time - 1
 
         while Settings.collection_running:
+            print("wait")
             if(time.perf_counter() - Settings.sample_time >= 1):
                 try:
                     val = round(max(0.00, hx.get_weight(5)), 2)
@@ -160,8 +161,8 @@ class Collect(QThread):
                     #val_B = hx.get_weight_B(5)
                     # print "A: %s  B: %s" % ( val_A, val_B )
 
-                    # hx.power_down()
-                    # hx.power_up()
+                    hx.power_down()
+                    hx.power_up()
                     # time.sleep(0.1)
                     Settings.current_weight.append(val)
                     self.update.emit()

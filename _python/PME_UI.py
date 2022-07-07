@@ -328,6 +328,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.reset_pushButton = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        self.reset_pushButton.setEnabled(False)
         self.reset_pushButton.setObjectName("reset_pushButton")
         self.horizontalLayout_6.addWidget(self.reset_pushButton)
         self.startCollection_pushButton = QtWidgets.QPushButton(self.gridLayoutWidget_2)
