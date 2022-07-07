@@ -116,8 +116,17 @@ def init():
     global current_weight
     current_weight = []
 
+    global trend_time
+    trend_time = []
+
+    global trend_weight
+    trend_weight = []
+
     global graph_ref
     graph_ref = ''
+
+    global trend_ref
+    trend_ref = ''
 
     global scale_referenceUnit
     scale_referenceUnit = 450

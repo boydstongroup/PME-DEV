@@ -33,13 +33,21 @@ def graph_update(self):
             Settings.current_time, Settings.current_weight)
         correlation_xy = correlation_matrix[0, 1]
         r_squared = correlation_xy**2
-        self.stdev_label.setText("R squared: " + str(r_squared))
+        self.r2_label.setText("R squared: " + str(r_squared))
+
+        Settings.trend_time=[0,Settings.current_time[-1]]
+        Settings.trend_weight=[b,(m*Settings.current_time[-1]+b)]
+
+        Settings.graph_ref.setData(Settings.trend_time, Settings.trend_weight)
 
 
 def collection_start(self):
     pen = mkPen(color=(197, 5, 12), width=2)
+    pen2 = mkPen(color=(4, 121, 168), width=1,style=QtCore.Qt.DashLine)
     Settings.graph_ref = self.graphWidget.plot(
         Settings.current_time, Settings.current_weight, pen=pen)
+    Settings.trend_ref = self.graphWidget.plot(
+        Settings.trend_time, Settings.trend_weight, pen=pen2)
 
     self.startCollection_pushButton.setEnabled(False)
     self.startCollection_pushButton.setText("Initializing...")
