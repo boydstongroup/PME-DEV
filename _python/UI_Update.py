@@ -28,7 +28,12 @@ def graph_update(self):
 
         m, b = np.polyfit(Settings.current_time, Settings.current_weight, 1)
         self.linearFit_label.setText(
-            "Linear Regression: " + str(round(m,2)) + "x+" + str(round(b,2)))
+            "Linear Regression: " + str(round(m, 2)) + "x+" + str(round(b, 2)))
+        correlation_matrix = np.corrcoef(
+            Settings.current_time, Settings.current_weight)
+        correlation_xy = correlation_matrix[0, 1]
+        r_squared = correlation_xy**2
+        self.stdev_label.setText("R squared: " + str(r_squared))
 
 
 def collection_start(self):
