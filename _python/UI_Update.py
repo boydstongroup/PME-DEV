@@ -22,7 +22,7 @@ def graph_update(self):
     self.average_label.setText("Average: " + str(statistics.mean(Settings.current_weight))+"g")
 
 
-    print(Settings.sample_time - Settings.initial_time)
+    print(statistics.stdev(Settings.current_weight))
 
 
 
