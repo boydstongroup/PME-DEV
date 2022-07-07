@@ -153,7 +153,7 @@ class Collect(QThread):
 
             hx.power_down()
             hx.power_up()
-            time.sleep(0.5)
+            # time.sleep(0.1)
             Settings.current_weight.append(val)
             self.update.emit()
         Settings.gradient_running = False
