@@ -149,6 +149,8 @@ class Collect(QThread):
             if Settings.zero:
                 hx.reset()
                 hx.tare()
+                Settings.current_time = []
+                Settings.current_weight = []
                 Settings.zero = False
             if(time.perf_counter() - Settings.sample_time >= 1):
                 try:
