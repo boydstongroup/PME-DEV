@@ -799,14 +799,14 @@
         <item row="0" column="0">
          <widget class="QLabel" name="linearFit_label">
           <property name="text">
-           <string>Linear Fit:</string>
+           <string>Linear Regression:</string>
           </property>
          </widget>
         </item>
         <item row="1" column="1">
          <widget class="QLabel" name="stdev_label">
           <property name="text">
-           <string>Standard deviation:</string>
+           <string>Standard Deviation:</string>
           </property>
          </widget>
         </item>
@@ -841,7 +841,7 @@
         <item row="0" column="1">
          <widget class="QLabel" name="r2_label">
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;R&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>R squared: </string>
           </property>
          </widget>
         </item>
