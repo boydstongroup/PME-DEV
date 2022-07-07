@@ -162,7 +162,7 @@ class Collect(QThread):
                 # time.sleep(0.1)
                 Settings.current_weight.append(val)
                 self.update.emit()
-        Settings.gradient_running = False
+        # Settings.gradient_running = False
 
 # class Interval(QThread):
 #
