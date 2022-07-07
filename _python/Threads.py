@@ -58,6 +58,7 @@ class Gradient(QThread):
                 self.update.emit()
         Settings.gradient_running = False
 
+
 class Agitation(QThread):
 
     def __init__(self):
@@ -120,6 +121,7 @@ class ex2Agitation(QThread):
         else:
             Commands.slider_Released()
 
+
 class Collect(QThread):
     update = pyqtSignal()
 
@@ -138,14 +140,16 @@ class Collect(QThread):
         hx.tare()
 
         while Settings.collection_running:
-            val = round(max(0.00, hx.get_weight(5)),2)
+            val = round(max(0.00, hx.get_weight(5)), 2)
+            if val < 0.2:
+                val = 0
             print(val)
 
             # To get weight from both channels (if you have load cells hooked up
             # to both channel A and B), do something like this
             #val_A = hx.get_weight_A(5)
             #val_B = hx.get_weight_B(5)
-            #print "A: %s  B: %s" % ( val_A, val_B )
+            # print "A: %s  B: %s" % ( val_A, val_B )
 
             hx.power_down()
             hx.power_up()
