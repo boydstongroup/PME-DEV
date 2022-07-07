@@ -1,6 +1,7 @@
 import os
 import Settings
 import Commands
+import statistics
 from PyQt5.QtGui import QImage, QPixmap
 from pyqtgraph import mkPen
 
@@ -17,9 +18,13 @@ def graph_update(self):
     Settings.current_time.append(Settings.sample_time - Settings.initial_time)
     Settings.graph_ref.setData(Settings.current_time, Settings.current_weight)
     self.reading_label.setText("Live Reading: " + str(Settings.current_weight[-1])+"g")
+    self.stdev_label.setText("Standard Deviation: " + str(statistics.stdev(Settings.current_weight)))
+    self.average_label.setText("Average: " + str(statistics.mean(Settings.current_weight))+"g")
 
 
     print(Settings.sample_time - Settings.initial_time)
+
+
 
 
 def collection_start(self):

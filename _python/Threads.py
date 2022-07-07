@@ -149,6 +149,7 @@ class Collect(QThread):
             if Settings.zero:
                 hx.reset()
                 hx.tare()
+                Settings.zero = False
             if(time.perf_counter() - Settings.sample_time >= 1):
                 try:
                     val = round(hx.get_weight(1), 2)
