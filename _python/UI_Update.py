@@ -4,6 +4,7 @@ import Commands
 import statistics
 import numpy as np
 from PyQt5.QtGui import QImage, QPixmap
+import PyQt5.QtCore
 from pyqtgraph import mkPen
 
 
@@ -42,7 +43,7 @@ def graph_update(self):
 
 
 def collection_start(self):
-    pen = mkPen(color=(197, 5, 12), width=2)
+    pen = mkPen(color=(197, 5, 12), width=2, style=QtCore.Qt.DashLine)
     Settings.graph_ref = self.graphWidget.plot(
         Settings.current_time, Settings.current_weight, pen=pen)
     pen2 = mkPen(color=(4, 121, 168), width=1)
