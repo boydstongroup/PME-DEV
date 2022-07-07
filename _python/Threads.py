@@ -4,6 +4,7 @@ import time
 import sys
 import RPi.GPIO as GPIO
 from hx711 import HX711
+from pyqtgraph import mkPen
 # import Functions
 # import socket
 # import board
