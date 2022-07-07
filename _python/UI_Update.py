@@ -35,7 +35,7 @@ def graph_update(self):
             Settings.current_time, Settings.current_weight)
         correlation_xy = correlation_matrix[0, 1]
         r_squared = correlation_xy**2
-        self.r2_label.setText("R squared: " + str(r_squared))
+        self.r2_label.setText("R squared: " + str(round(r_squared,2)))
 
         Settings.trend_time=[0,Settings.current_time[-1]]
         Settings.trend_weight=[b,(m*Settings.current_time[-1]+b)]
