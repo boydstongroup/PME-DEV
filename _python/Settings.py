@@ -76,6 +76,9 @@ def init():
     global agitating
     agitating = False
 
+    global zero
+    zero = False
+
     global ex1_AgitationDuration
     ex1_AgitationDuration = 2
     global ex2_AgitationDuration

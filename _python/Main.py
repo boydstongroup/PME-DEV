@@ -75,6 +75,9 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
 
         self.startCollection_pushButton.clicked.connect(
             lambda: Call_Thread.start_Collection(self))
+        self.reset_pushButton.clicked.connect(
+            lambda: UI_Update.zero(self))
+
 
         self.ex1Agitate_pushButton.clicked.connect(
             lambda: Call_Thread.start_ex1Agitation(self))
