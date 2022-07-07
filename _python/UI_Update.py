@@ -2,7 +2,6 @@ import os
 import Settings
 import Commands
 import statistics
-import PyQt5.QtCore
 import numpy as np
 from PyQt5.QtGui import QImage, QPixmap
 from pyqtgraph import mkPen
@@ -44,11 +43,10 @@ def graph_update(self):
 
 def collection_start(self):
     pen = mkPen(color=(197, 5, 12), width=2)
-    pen2 = mkPen(color=(4, 121, 168), width=1,style=QtCore.Qt.DashLine)
     Settings.graph_ref = self.graphWidget.plot(
         Settings.current_time, Settings.current_weight, pen=pen)
     Settings.trend_ref = self.graphWidget.plot(
-        Settings.trend_time, Settings.trend_weight, pen=pen2)
+        Settings.trend_time, Settings.trend_weight, pen=pen)
 
     self.startCollection_pushButton.setEnabled(False)
     self.startCollection_pushButton.setText("Initializing...")
