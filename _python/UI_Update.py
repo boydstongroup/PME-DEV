@@ -2,10 +2,11 @@ import os
 import Settings
 import Commands
 import statistics
+
 import numpy as np
 from PyQt5.QtGui import QImage, QPixmap
-import PyQt5.QtCore
 from pyqtgraph import mkPen
+from PyQt5 import QtCore
 
 
 def init(self):
