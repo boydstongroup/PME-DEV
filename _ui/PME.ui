@@ -789,27 +789,6 @@
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout">
-        <item row="1" column="0">
-         <widget class="QLabel" name="average_label">
-          <property name="text">
-           <string>Average:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="linearFit_label">
-          <property name="text">
-           <string>Linear Regression:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QLabel" name="stdev_label">
-          <property name="text">
-           <string>Standard Deviation:</string>
-          </property>
-         </widget>
-        </item>
         <item row="1" column="2">
          <layout class="QHBoxLayout" name="horizontalLayout_6">
           <item>
@@ -822,23 +801,6 @@
             </property>
             <property name="maximum">
              <number>60</number>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="reset_pushButton">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="text">
-             <string>Zero Scale</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="startCollection_pushButton">
-            <property name="text">
-             <string>Collect Data</string>
             </property>
            </widget>
           </item>
@@ -855,6 +817,44 @@
          <widget class="QLabel" name="r2_label">
           <property name="text">
            <string>R squared: </string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="average_label">
+          <property name="text">
+           <string>Average:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="linearFit_label">
+          <property name="text">
+           <string>Linear Fit::</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="stdev_label">
+          <property name="text">
+           <string>Standard Deviation:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QPushButton" name="reset_pushButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Zero Scale</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QPushButton" name="startCollection_pushButton">
+          <property name="text">
+           <string>Collect Data</string>
           </property>
          </widget>
         </item>
