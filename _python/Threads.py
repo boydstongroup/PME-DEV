@@ -152,7 +152,7 @@ class Collect(QThread):
                 Settings.current_time = []
                 Settings.current_weight = []
                 Settings.zero = False
-            if(time.perf_counter() - Settings.sample_time >= 1):
+            if(time.perf_counter() - Settings.sample_time >= Settings.sample_interval):
                 try:
                     val = round(hx.get_weight(5), 2)
                     # if val < 0.2 and val > -0.2:
