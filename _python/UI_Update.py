@@ -24,18 +24,18 @@ def graph_update(self):
         "Live Reading: " + str(Settings.current_weight[-1]) + "g")
     if len(Settings.current_time) > 1:
         self.stdev_label.setText(
-            "Standard Deviation: " + str(round(statistics.stdev(Settings.current_weight), 2)))
+            "Stdev: " + str(round(statistics.stdev(Settings.current_weight), 2)))
         self.average_label.setText(
-            "Average: " + str(round(statistics.mean(Settings.current_weight), 2)) + "g")
+            "Avg: " + str(round(statistics.mean(Settings.current_weight), 2)) + "g")
 
         m, b = np.polyfit(Settings.current_time, Settings.current_weight, 1)
         self.linearFit_label.setText(
-            "Linear Regression: " + str(round(m, 4)) + "x+" + str(round(b, 2)))
+            "LR: " + str(round(m, 4)) + "x+" + str(round(b, 2)))
         correlation_matrix = np.corrcoef(
             Settings.current_time, Settings.current_weight)
         correlation_xy = correlation_matrix[0, 1]
         r_squared = correlation_xy**2
-        self.r2_label.setText("R squared: " + str(round(r_squared,2)))
+        self.r2_label.setText("R sq: " + str(round(r_squared,2)))
 
         Settings.trend_time=[0,Settings.current_time[-1]]
         Settings.trend_weight=[b,(m*Settings.current_time[-1]+b)]
