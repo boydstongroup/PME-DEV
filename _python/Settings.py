@@ -107,6 +107,9 @@ def init():
     global initial_time
     initial_time = 0
 
+    global sample_interval
+    sample_interval = 0
+
     global sample_time
     sample_time = 0
 

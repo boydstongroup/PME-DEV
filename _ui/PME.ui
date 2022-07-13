@@ -813,6 +813,19 @@
         <item row="1" column="2">
          <layout class="QHBoxLayout" name="horizontalLayout_6">
           <item>
+           <widget class="QSpinBox" name="sampleInterval_spinBox">
+            <property name="suffix">
+             <string> s/sample</string>
+            </property>
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>60</number>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="reset_pushButton">
             <property name="enabled">
              <bool>false</bool>

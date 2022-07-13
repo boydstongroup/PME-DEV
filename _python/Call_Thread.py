@@ -59,6 +59,7 @@ def start_ex2Agitation(self):
 def start_Collection(self):
 
     if not Settings.collection_running:
+        Settings.sample_interval=self.sampleInterval_spinBox.value()
         self.graphWidget.clear()
         self.Collection_Thread = Threads.Collect()
         self.Collection_Thread.update.connect(
