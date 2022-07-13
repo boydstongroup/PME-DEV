@@ -816,28 +816,28 @@
         <item row="0" column="1">
          <widget class="QLabel" name="r2_label">
           <property name="text">
-           <string>R squared: </string>
+           <string>R sq.:</string>
           </property>
          </widget>
         </item>
         <item row="1" column="0">
          <widget class="QLabel" name="average_label">
           <property name="text">
-           <string>Average:</string>
+           <string>Avg:</string>
           </property>
          </widget>
         </item>
         <item row="0" column="0">
          <widget class="QLabel" name="linearFit_label">
           <property name="text">
-           <string>Linear Fit::</string>
+           <string>LR:</string>
           </property>
          </widget>
         </item>
         <item row="1" column="1">
          <widget class="QLabel" name="stdev_label">
           <property name="text">
-           <string>Standard Deviation:</string>
+           <string>Stdev:</string>
           </property>
          </widget>
         </item>
