@@ -73,6 +73,9 @@ def init():
     global collection_running
     collection_running = False
 
+    global oxygen_running
+    oxygen_running = False
+
     global agitating
     agitating = False
 
@@ -107,17 +110,32 @@ def init():
     global initial_time
     initial_time = 0
 
+    global oxygen_initial_time
+    oxygen_initial_time = 0
+
     global sample_interval
     sample_interval = 0
+
+    global oxygen_interval
+    oxygen_interval = 0
 
     global sample_time
     sample_time = 0
 
+    global oxygen_sample_time
+    oxygen_sample_time = 0
+
     global current_time
     current_time = []
 
+    global oxygen_current_time
+    oxygen_current_time = []
+
     global current_weight
     current_weight = []
+
+    global oxygen_concentration
+    oxygen_concentration = []
 
     global trend_time
     trend_time = []
@@ -127,6 +145,9 @@ def init():
 
     global graph_ref
     graph_ref = ''
+
+    global oxygen_graph_ref
+    oxygen_graph_ref = ''
 
     global trend_ref
     trend_ref = ''

@@ -12,9 +12,16 @@ from PyQt5 import QtCore
 def init(self):
     self.graphWidget.setBackground('#fbfbfb')
     self.graphWidget.showGrid(x=True, y=True)
+
+    self.graphWidget_2.setBackground('#fbfbfb')
+    self.graphWidget_2.showGrid(x=True, y=True)
+
     styles = {'color': 'r', 'font-size': '15px'}
     self.graphWidget.setLabel('left', 'Weight (g)', **styles)
     self.graphWidget.setLabel('bottom', 'Time (s)', **styles)
+
+    self.graphWidget_2.setLabel('left', 'Concentration (Vol%)', **styles)
+    self.graphWidget_2.setLabel('bottom', 'Time (s)', **styles)
 
 
 def graph_update(self):
@@ -42,6 +49,11 @@ def graph_update(self):
 
         Settings.trend_ref.setData(Settings.trend_time, Settings.trend_weight)
 
+def oxygen_update(self):
+    Settings.oxygen_current_time.append(Settings.oxygen_sample_time - Settings.oxygen_initial_time)
+    Settings.oxygen_graph_ref.setData(Settings.oxygen_current_time, Settings.oxygen_concentration)
+    self.Oxygen_label.setText(str(Settings.oxygen_concentration[-1]) + " Vol%")
+
 
 def collection_start(self):
     pen = mkPen(color=(197, 5, 12), width=2)
@@ -54,6 +66,14 @@ def collection_start(self):
     self.startCollection_pushButton.setEnabled(False)
     self.startCollection_pushButton.setText("Initializing...")
 
+def oxygen_start(self):
+    pen = mkPen(color=(197, 5, 12), width=2)
+    Settings.oxygen_graph_ref = self.graphWidget_2.plot(
+        Settings.oxygen_current_time, Settings.oxygen_concentration, pen=pen)
+
+    self.startOxygenCollection_pushButton.setEnabled(False)
+    self.startOxygenCollection_pushButton.setText("Initializing...")
+
 
 def zero(self):
     Settings.zero = True
@@ -64,6 +84,9 @@ def collection_initialized(self):
     self.startCollection_pushButton.setText("Reset Collection")
     self.reset_pushButton.setEnabled(True)
 
+def oxygen_initialized(self):
+    self.startOxygenCollection_pushButton.setEnabled(True)
+    self.startOxygenCollection_pushButton.setText("Reset Collection")
 
 def collection_complete(self):
     self.startCollection_pushButton.setEnabled(True)
@@ -72,6 +95,11 @@ def collection_complete(self):
     Settings.current_time = []
     Settings.current_weight = []
 
+def oxygen_complete(self):
+    self.startOxygenCollection_pushButton.setEnabled(True)
+    self.startOxygenCollection_pushButton.setText("Collect Data")
+    Settings.oxygen_current_time = []
+    Settings.oxygen_concentration = []
 
 def link(self):
     if Settings.LINKED:

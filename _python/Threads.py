@@ -4,6 +4,7 @@ import time
 import sys
 import RPi.GPIO as GPIO
 from hx711 import HX711
+from DFRobot_EOxygenSensor import *
 
 # import Functions
 # import socket
@@ -173,6 +174,34 @@ class Collect(QThread):
                     self.update.emit()
                 except:
                     Settings.collection_running = False
+
+class Oxygen(QThread):
+    update = pyqtSignal()
+    initialized = pyqtSignal()
+
+    def __init__(self):
+        QThread.__init__(self)
+
+    def __del__(self):
+        self._running = False
+
+    def run(self):
+        Settings.oxygen_running = True
+        oxygen = DFRobot_EOxygenSensor_I2C(0x01, E_OXYGEN_ADDRESS_0)
+
+        self.initialized.emit()
+        Settings.oxygen_initial_time = time.perf_counter()
+        Settings.oxygen_sample_time = Settings.oxygen_initial_time - 1
+
+        while Settings.oxygen_running:
+            if(time.perf_counter() - Settings.oxygen_sample_time >= Settings.oxygen_interval):
+                try:
+                    val = round(oxygen.read_oxygen_concentration(), 2)
+                    Settings.oxygen_sample_time = time.perf_counter()
+                    Settings.oxygen_concentration.append(val)
+                    self.update.emit()
+                except:
+                    Settings.oxygen_running = False
 
 
 # class Interval(QThread):

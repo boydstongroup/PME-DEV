@@ -76,6 +76,24 @@ def start_Collection(self):
         Settings.collection_running = False
         #
 
+def start_Oxygen(self):
+
+    if not Settings.oxygen_running:
+        Settings.oxygen_interval=self.oxygenSampleInterval_spinBox.value()
+        self.graphWidget_2.clear()
+        self.Oxygen_Thread = Threads.Oxygen()
+        self.Oxygen_Thread.update.connect(
+            lambda: UI_Update.oxygen_update(self))
+        self.Oxygen_Thread.initialized.connect(
+            lambda: UI_Update.oxygen_initialized(self))
+        self.Oxygen_Thread.started.connect(
+            lambda: UI_Update.oxygen_start(self))
+        self.Oxygen_Thread.finished.connect(
+            lambda: UI_Update.oxygen_complete(self))
+
+        self.Oxygen_Thread.start()
+    else:
+        Settings.oxygen_running = False
 
 # def start_preview(self):
 #
