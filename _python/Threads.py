@@ -194,7 +194,7 @@ class Oxygen(QThread):
         Settings.oxygen_sample_time = Settings.oxygen_initial_time - 1
 
         while Settings.oxygen_running:
-            if(time.perf_counter() - Settings.oxygen_sample_time >= Settings.oxygen_interval):
+            if(time.perf_counter() - Settings.oxygen_sample_time >= Settings.oxygen_interval/1000):
                 try:
                     val = round(oxygen.read_oxygen_concentration(), 2)
                     Settings.oxygen_sample_time = time.perf_counter()
