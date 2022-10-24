@@ -125,6 +125,9 @@ def init():
     global oxygen_sample_time
     oxygen_sample_time = 0
 
+    global calibration_mode
+    calibration_mode = 0
+
     global current_time
     current_time = []
 

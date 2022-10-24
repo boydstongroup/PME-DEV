@@ -37,7 +37,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="General_tab">
      <attribute name="title">
@@ -931,7 +931,7 @@
         <item row="0" column="2">
          <widget class="QPushButton" name="Calibration1_pushButton">
           <property name="enabled">
-           <bool>true</bool>
+           <bool>false</bool>
           </property>
           <property name="text">
            <string>20.9%Vol Calibration</string>
@@ -941,7 +941,7 @@
         <item row="1" column="2">
          <widget class="QPushButton" name="Calibration2_pushButton">
           <property name="enabled">
-           <bool>true</bool>
+           <bool>false</bool>
           </property>
           <property name="text">
            <string>99.5%Vol Calibration</string>

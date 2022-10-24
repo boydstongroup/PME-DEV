@@ -194,6 +194,15 @@ class Oxygen(QThread):
         Settings.oxygen_sample_time = Settings.oxygen_initial_time - 1
 
         while Settings.oxygen_running:
+            if Settings.calibration_mode==1
+                if oxygen.calibration_20_9() == 1:
+                    print("20.9 calibration success!\n")
+                Settings.calibration_mode=0
+            elif Settings.calibration_mode==2
+                if oxygen.calibration_99_5() == 1:
+                    print("99.5 calibration success!\n")
+                Settings.calibration_mode=0
+
             if(time.perf_counter() - Settings.oxygen_sample_time >= Settings.oxygen_interval):
                 try:
                     val = round(oxygen.read_oxygen_concentration(), 2)

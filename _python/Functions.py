@@ -132,6 +132,12 @@ def settings_change(mot, self):
     toggle_Signals(self, True)
     Commands.slider_Released()
 
+def calibrate(mode, self):
+    Settings.calibration_mode=mode
+
+
+
+
 
 # def rotate_image(self):
 #     Settings.rotation += 1

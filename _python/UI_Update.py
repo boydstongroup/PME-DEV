@@ -87,6 +87,8 @@ def collection_initialized(self):
 def oxygen_initialized(self):
     self.startOxygenCollection_pushButton.setEnabled(True)
     self.startOxygenCollection_pushButton.setText("Reset Collection")
+    self.Calibration1_pushButton.setEnabled(True)
+    self.Calibration2_pushButton.setEnabled(True)
 
 def collection_complete(self):
     self.startCollection_pushButton.setEnabled(True)
@@ -100,6 +102,8 @@ def oxygen_complete(self):
     self.startOxygenCollection_pushButton.setText("Collect Data")
     Settings.oxygen_current_time = []
     Settings.oxygen_concentration = []
+    self.Calibration1_pushButton.setEnabled(False)
+    self.Calibration2_pushButton.setEnabled(False)
 
 def link(self):
     if Settings.LINKED:

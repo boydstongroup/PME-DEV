@@ -81,6 +81,12 @@ class MainWindow(QMainWindow, PME_UI.Ui_MainWindow):
         self.startOxygenCollection_pushButton.clicked.connect(
             lambda: Call_Thread.start_Oxygen(self))
 
+        self.Calibration1_pushButton.clicked.connect(
+            lambda: Functions.calibrate(0,self))
+
+        self.Calibration2_pushButton.clicked.connect(
+            lambda: Functions.calibrate(1,self))
+
         self.ex1Agitate_pushButton.clicked.connect(
             lambda: Call_Thread.start_ex1Agitation(self))
         self.ex2Agitate_pushButton.clicked.connect(
